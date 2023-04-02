@@ -15,6 +15,11 @@
       renderer: 'canvas',
       useDirtyRect: false
     });
+    myChart.setOption({
+      title:{
+        text: '香港服务业2018年至2021年变化',
+      }
+    });
     var app = {};
     
     var option;
@@ -29,20 +34,45 @@
     dataset: {
       source: [
         ['product', '2018', '2019', '2020', '2021'],
-        ['保养及维修服务', 2856, 2753, 1856, 1781],
+        
         ['运输', 258847, 246749, 185876, 256096],
-        ['旅游', 288974, 226559, 22176, 14382],
-        ['保险及退休金服务', 11664, 11145, 9051, 9427],
+        ['其他商业服务', 117258, 108401, 97109, 110468],
         ['金融服务', 174083, 169289, 168766, 185573],
+        ['保险及退休金服务', 11664, 11145, 9051, 9427],
+        ['旅游', 288974, 226559, 22176, 14382],
         ['知识产权使用费', 2821, 5911, 5442, 5555],
         ['电子通讯、电脑及资讯服务', 23136, 24220, 25720, 29228],
-        ['其他商业服务', 117258, 108401, 97109, 110468]
+        ['保养及维修服务', 2856, 2753, 1856, 1781]
       ]
     },
     xAxis: { type: 'category' },
     yAxis: { gridIndex: 0 },
     grid: { top: '55%' },
     series: [
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
       {
         type: 'line',
         smooth: true,
