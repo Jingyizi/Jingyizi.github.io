@@ -2461,7 +2461,7 @@ ul.breadcrumb li:last-child {
 .comments {
   padding: 40px;
   background: rgba(255,182,182,0.8);
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .post-eof {
   display: none;
