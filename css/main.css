@@ -2484,6 +2484,7 @@ ul.breadcrumb li:last-child {
   }
   .post-block {
     padding: 20px;
+    background: rgba(255,255,255,0.8);
   }
   .comments {
     padding: 10px 20px;
