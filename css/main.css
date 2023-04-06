@@ -2460,7 +2460,6 @@ ul.breadcrumb li:last-child {
 .post-block,
 .comments {
   padding: 40px;
-  background: rgba(255,182,182,0.8);
   opacity: 0.8;
 }
 .post-eof {
@@ -2486,7 +2485,7 @@ ul.breadcrumb li:last-child {
   }
   .post-block {
     padding: 20px;
-    background: rgba(255,255,255,0.8);
+    opacity: 0.8;
   }
   .comments {
     padding: 10px 20px;
@@ -2501,7 +2500,7 @@ ul.breadcrumb li:last-child {
   }
   .post-block {
     padding: 12px;
-    background: rgba(255,255,255,0.8);
+    opacity: 0.8;
   }
   .comments {
     padding: 10px 12px;
