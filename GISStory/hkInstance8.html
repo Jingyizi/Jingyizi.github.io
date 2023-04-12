@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>8月案例点</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+</style>
+</head>
+<body>
+<style>
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        padding-bottom: 0;
+    }
+</style>
+<div id="map"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidG9rZW4tZGZnZWd0IiwiYSI6ImNsNXJodGVpdjI3ZmUza253djVvdWlicGUifQ.w4_-0X6l__soxEBuZjyvIA';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/token-dfgegt/clgc23qtu002501pjiigri69t',
+        center: [114.111,22.293],
+        zoom: 10.72
+    });
+
+    map.on('load', () => {
+        map.addSource('places', {
+            'type': 'geojson',
+            'data':{
+                "type": "FeatureCollection",
+                "name": "8月点",
+                "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4490" } },
+                "features": [
+                { "type": "Feature", "properties": { "Id": 0, "Name": "荃湾", "Instance": "大肆破坏店铺及隧道设施，攻击警车" }, "geometry": { "type": "Point", "coordinates": [ 114.120545757791845, 22.368120411285453 ] } },
+                { "type": "Feature", "properties": { "Id": 0, "Name": "观塘", "Instance": "向警察扔掷大量砖块及燃烧瓶" }, "geometry": { "type": "Point", "coordinates": [ 114.229736572313399, 22.307969114227031 ] } },
+                { "type": "Feature", "properties": { "Id": 0, "Name": "香港国际机场", "Instance": "非法集合严重阻碍机场运作，导致航班停飞" }, "geometry": { "type": "Point", "coordinates": [ 113.937633939235113, 22.312975500183335 ] } },
+                { "type": "Feature", "properties": { "Id": 0, "Name": "香港政府总部", "Instance": "投掷多枚汽油弹" }, "geometry": { "type": "Point", "coordinates": [ 114.170656159612193, 22.276950261924846 ] } },
+                { "type": "Feature", "properties": { "Id": 0, "Name": "轩尼诗道", "Instance": "四处纵火，且设置阻碍阻止消防车救火" }, "geometry": { "type": "Point", "coordinates": [ 114.171607944014539, 22.274570800919005 ] } }
+                ]
+            }
+        })
+        // Add a layer showing the places.
+        map.addLayer({
+            'id': 'places',
+            'type': 'circle',
+            'source': 'places',
+            'paint': {
+                'circle-color': '#8B0000',
+                'circle-radius': 3,
+                'circle-stroke-width': 1,
+                'circle-stroke-color': 'white'
+            }
+        });
+        // Create a popup, but don't add it to the map yet.
+        const popup1 = new mapboxgl.Popup({
+            offset:[-10,20],
+            closeButton: true,
+            closeOnClick: false,
+            maxWidth:'280px',
+            anchor:'right'
+        }).setLngLat([ 114.120545757791845, 22.368120411285453 ]).setHTML('<h1 style="color:#33CC66">荃湾</h1><h3>大肆破坏店铺及隧道设施，攻击警车</h3><img src="8-1.png" width=200px />').addTo(map);
+        const popup2 = new mapboxgl.Popup({
+            offset:0,
+            closeButton: true,
+            closeOnClick: false,
+            maxWidth:'240px',
+            anchor:'left'
+        }).setLngLat([ 114.229736572313399, 22.307969114227031 ]).setHTML('<h1 style="color:#9966CC">观塘</h1><h3>向警察扔掷大量砖块及燃烧瓶</h3><img src="8-2.png" width=200px />').addTo(map);
+        
+        const popup3 = new mapboxgl.Popup({
+            offset:0,
+            closeButton: true,
+            closeOnClick: false,
+            maxWidth:'240px',
+            anchor:'top'
+        }).setLngLat([ 113.937633939235113, 22.312975500183335 ]).setHTML('<h1 style="color:#FF66CC">香港国际机场</h1><h3>非法集合严重阻碍机场运作，导致航班停飞;殴打警察及记者</h3><img src="8-3.png" width=200px />').addTo(map);
+        const popup4 = new mapboxgl.Popup({
+            offset:3,
+            closeButton: true,
+            closeOnClick: false,
+            maxWidth:'240px',
+            anchor:'bottom'
+        }).setLngLat([ 114.170656159612193, 22.276950261924846 ]).setHTML('<h1 style="color:#9966CC">香港政府总部</h1><h3>投掷多枚汽油弹</h3><img src="8-4.png" width=200px />').addTo(map);
+        const popup5 = new mapboxgl.Popup({
+            offset:0,
+            closeButton: true,
+            closeOnClick: false,
+            maxWidth:'280px',
+            anchor:'top'
+        }).setLngLat([ 114.171607944014539, 22.274570800919005 ]).setHTML('<h1 style="color:#9966CC">轩尼诗道</h1><h3>四处纵火，且设置阻碍阻止消防车救火</h3><img src="8-5.png" width=200px />').addTo(map);
+    });
+
+</script>
+
+</body>
+</html>

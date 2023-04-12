@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>7月案例点</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+</style>
+</head>
+<body>
+<style>
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        padding-bottom: 0;
+    }
+</style>
+<div id="map"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidG9rZW4tZGZnZWd0IiwiYSI6ImNsNXJodGVpdjI3ZmUza253djVvdWlicGUifQ.w4_-0X6l__soxEBuZjyvIA';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/token-dfgegt/clgbrn0dn000z01o6lewcerxp',
+        center: [114.166,22.368],
+        zoom: 10.1
+    });
+
+    map.on('load', () => {
+        map.addSource('places', {
+            'type': 'geojson',
+            'data':{
+                "type": "FeatureCollection",
+            "name": "7月点",
+            "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4490" } },
+            "features": [
+            { "type": "Feature", "properties": { "Id": 0, "Name": "沙田", "Instance": "暴力袭警" }, "geometry": { "type": "Point", "coordinates": [ 114.19542855847611, 22.379352121444658 ] } },
+            { "type": "Feature", "properties": { "Id": 1, "Name": "西环", "Instance": "围堵、冲击香港中联办大楼；污损国徽" }, "geometry": { "type": "Point", "coordinates": [ 114.154017717018391, 22.286054849433729 ] } },
+            { "type": "Feature", "properties": { "Id": 2, "Name": "立法会大楼", "Instance": "损坏议事厅和特区国徽，在主席台上撕毁《香港基本法》" }, "geometry": { "type": "Point", "coordinates": [ 114.171443968500924, 22.27824685901405 ] } }
+            ]
+            }
+            
+        })
+        // Add a layer showing the places.
+        map.addLayer({
+            'id': 'places',
+            'type': 'circle',
+            'source': 'places',
+            'paint': {
+                'circle-color': '#8B0000',
+                'circle-radius': 3,
+                'circle-stroke-width': 1,
+                'circle-stroke-color': 'white'
+            }
+        });
+        // Create a popup, but don't add it to the map yet.
+        const popup1 = new mapboxgl.Popup({
+            offset:10,
+            closeButton: true,
+            closeOnClick: false,
+            maxWidth:'240px',
+            anchor:'bottom'
+        }).setLngLat([ 114.19542855847611, 22.379352121444658 ]).setHTML('<h1 style="color:#33CC66">沙田</h1><h3>暴力袭警</h3><img src="7-1.png" width=200px />').addTo(map);
+        const popup2 = new mapboxgl.Popup({
+            offset:10,
+            closeButton: true,
+            closeOnClick: false,
+            maxWidth:'240px',
+            anchor:'right'
+        }).setLngLat([ 114.154017717018391, 22.286054849433729 ]).setHTML('<h1 style="color:#9966CC">西环</h1><h3>围堵、冲击香港中联办大楼；污损国徽</h3><img src="7-2.png" width=200px />').addTo(map);
+        const popupOffsets = {
+            'top': [0, 0],
+            'top-left': [0, 0],
+            'top-right': [0, 0],
+            'bottom': [0, -50],
+            'bottom-left': [10,30],
+            'bottom-right': [10,30],
+            'left': [30,0],
+        };
+        const popup3 = new mapboxgl.Popup({
+            offset:popupOffsets,
+            closeButton: true,
+            closeOnClick: false,
+            maxWidth:'300px',
+            anchor:'left'
+        }).setLngLat([ 114.171443968500924, 22.27824685901405 ]).setHTML('<h1 style="color:#FF66CC">立法会大楼</h1><h3>损坏议事厅和特区国徽，在主席台上撕毁《香港基本法》</h3><img src="7-3.png" width=200px />').addTo(map);
+
+    });
+
+</script>
+
+</body>
+</html>
