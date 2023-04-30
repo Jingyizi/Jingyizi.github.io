@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jingyizi.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="var dom &#x3D; document.getElementById(&#39;container&#39;);     var myChart &#x3D; echarts.init(dom, null, {       renderer: &#39;canvas&#39;,       useDirtyRect: false     });     var app &#x3D; {};">
+<meta property="og:type" content="website">
+<meta property="og:title" content="靖翼之憩">
+<meta property="og:url" content="http://jingyizi.github.io/chengdu/html/townnoise.html">
+<meta property="og:site_name" content="靖翼之憩">
+<meta property="og:description" content="var dom &#x3D; document.getElementById(&#39;container&#39;);     var myChart &#x3D; echarts.init(dom, null, {       renderer: &#39;canvas&#39;,       useDirtyRect: false     });     var app &#x3D; {};">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-27T16:39:19.872Z">
+<meta property="article:modified_time" content="2023-04-27T16:20:20.485Z">
+<meta property="article:author" content="靖翼子">
+<meta property="article:tag" content="“GIS”">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://jingyizi.github.io/chengdu/html/townnoise">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://jingyizi.github.io/chengdu/html/townnoise.html","path":"chengdu/html/townnoise.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | 靖翼之憩
+</title>
+  
+
+
+
+
+
+
+
+
+  <a target="_blank" rel="noopener" href="https://github.com/Jingyizi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">靖翼之憩</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">挫其锐解其纷，和其光同其尘</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="靖翼子"
+      src="/images/custom-logo.png">
+  <p class="site-author-name" itemprop="name">靖翼子</p>
+  <div class="site-description" itemprop="description">天地，生民，往圣，天下</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/chengdu/">CHENGDU</a></li>
+            <li><a href="/chengdu/html/">HTML</a></li>
+            <li>TOWNNOISE</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+
+    var option;
+
+    myChart.showLoading();
+    $.get('./chengdujiedao.geojson', function (chengduJson) {
+      myChart.hideLoading();
+      echarts.registerMap('Chengdu', chengduJson);
+      var data = [{name:"保和街道",value:75.28561453},{name:"草市街街道",value:67.76766091},{name:"草堂街道",value:78.1022864},{name:"茶店子街道",value:76.36518771},{name:"成龙路街道",value:79.95174263},{name:"城厢镇",value:86.73529412},{name:"春熙路街道",value:81.36971047},{name:"簇锦街道",value:82.14872798},{name:"簇桥街道",value:80.92561983},{name:"大丰街道",value:70.75294118},{name:"大面街道",value:81.99336197},{name:"大弯街道",value:89.57142857},{name:"东光街道",value:66.31212058},{name:"东坡街道",value:82.31989247},{name:"东升街道",value:83.84359519},{name:"督院街街道",value:79.64662757},{name:"二仙桥街道",value:107.3557312},{name:"芳草街道",value:138.3191251},{name:"凤凰山街道",value:87.80530973},{name:"福洪乡",value:90.36734694},{name:"抚琴街道",value:137.5674931},{name:"府南街道",value:114.7802908},{name:"府青路街道",value:78.96575342},{name:"公兴街道",value:80.75},{name:"光华街道",value:100.6198126},{name:"桂溪街道",value:76.88382506},{name:"合江亭街道",value:78.88023088},{name:"合作街道",value:81.14234017},{name:"荷花池街道",value:137.021863},{name:"红牌楼街道",value:71.04815696},{name:"洪安镇",value:91.85},{name:"华兴街道",value:83.2715655},{name:"华阳镇街道",value:82.17338038},{name:"黄甲街道",value:80.81481481},{name:"黄田坝街道",value:84.42675159},{name:"黄土镇",value:84.17073171},{name:"黄忠街道",value:77.48854962},{name:"火车南站街道",value:77.10138408},{name:"机投桥街道",value:84.86775632},{name:"建设路街道",value:82.77120536},{name:"浆洗街街道",value:84.30365297},{name:"金花桥街道",value:79.57474227},{name:"金泉街道",value:82.48047809},{name:"金沙街道",value:79.99475524},{name:"晋阳街道",value:83.93838863},{name:"九江街道",value:79.01209677},{name:"九里堤街道",value:85.44444444},{name:"莲新街道",value:79.88265306},{name:"柳江街道",value:80.25519713},{name:"龙泉街道",value:85.61603376},{name:"龙潭街道",value:82.96531792},{name:"龙舟路街道",value:80.48669202},{name:"马家镇",value:86.56743003},{name:"猛追湾街道",value:80.52162162},{name:"弥牟镇",value:89.575},{name:"木兰镇",value:119.4453333},{name:"牛市口街道",value:79.8707483},{name:"郫筒街道",value:83.92929293},{name:"青龙街道",value:85.06098843},{name:"清泉镇",value:92.14285714},{name:"人民北路街道",value:82.051282},{name:"三河街道",value:72.57256778},{name:"三圣街道",value:78.97521866},{name:"三星镇",value:85.57276995},{name:"沙河街道",value:80.27896996},{name:"沙河源街道",value:82.507109},{name:"少城街道",value:77.58503401},{name:"圣灯街道",value:82.5971223},{name:"狮子山街道",value:69.64969136},{name:"十陵街道",value:76.14427861},{name:"石板滩镇",value:92.5},{name:"石羊场街道",value:80.08912287},{name:"书院街街道",value:79.30954879},{name:"双桂路街道",value:79.16795866},{name:"双楠街道",value:130.2604423},{name:"双桥子街道",value:82.61885246},{name:"双水碾街道",value:80.2195122},{name:"水井坊街道",value:79.2209414},{name:"驷马桥街道",value:84.6625},{name:"苏坡街道",value:83.73509545},{name:"太升路街道",value:80.86879433},{name:"桃蹊路街道",value:84.55555556},{name:"天回镇街道",value:81.57142857},{name:"跳蹬河街道",value:84.29087452},{name:"跳伞塔街道",value:83.11312217},{name:"万安镇",value:90.1419295},{name:"万年场街道",value:82.31213873},{name:"汪家拐街道",value:75.35511364},{name:"望江路街道",value:80.91677019},{name:"文家街道",value:87.94871795},{name:"五块石街道",value:67.23376623},{name:"西安路街道",value:130.8796562},{name:"西航港街道",value:77.51785083},{name:"西河镇",value:74.47104247},{name:"西华街道",value:85.45320197},{name:"西御河街道",value:81.52409639},{name:"犀浦镇",value:78.35446686},{name:"祥福镇",value:88.89130435},{name:"肖家河街道",value:105.8266439},{name:"新都镇",value:92.62284483},{name:"新鸿路街道",value:86.58139535},{name:"新华西路街道",value:76.42164179},{name:"兴隆镇",value:80.78571429},{name:"盐市口街道",value:78.01647059},{name:"营门口街道",value:79.54891304},{name:"永宁镇",value:88.5},{name:"玉林街道",value:79.93480176},{name:"赵镇街道",value:87.67666667},{name:"正兴镇",value:79.81300813},{name:"中和街道",value:79.99494666}];
+      data.sort(function (a, b) {
+        return a.value - b.value;
+      });
+      const mapOption = {
+        visualMap: {
+          left: 'right',
+          min: 60,
+          max: 140,
+          inRange: {
+            // prettier-ignore
+            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+          },
+          text: ['High', 'Low'],
+          calculable: true
+        },
+        series: [
+          {
+            id: 'population',
+            type: 'map',
+            roam: true,
+            map: 'Chengdu',
+            animationDurationUpdate: 1000,
+            universalTransition: true,
+            data: data
+          }
+        ]
+      };
+      const barOption = {
+        xAxis: {
+          type: 'value'
+        },
+        yAxis: {
+          type: 'category',
+          axisLabel: {
+            rotate: 30
+          },
+          data: data.map(function (item) {
+            console.log(item.name)
+            return item.name;
+          })
+        },
+        animationDurationUpdate: 1000,
+        visualMap: {
+          left: 'right',
+          min: 0,
+          max: 140,
+          inRange: {
+            // prettier-ignore
+            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+          },
+          text: ['High', 'Low'],
+          calculable: true
+        },
+        series: {
+          type: 'bar',
+          id: 'population',
+          data: data.map(function (item) {
+            return item.value;
+          }),
+
+          universalTransition: true
+        }
+      };
+      let currentOption = mapOption;
+      myChart.setOption(mapOption);
+      myChart.on('click', () => {
+        myChart.setOption(currentOption = currentOption === mapOption ? barOption : mapOption)
+      })
+    });
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+
+</html>
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/chengdu/">CHENGDU</a></li>
+            <li><a href="/chengdu/html/">HTML</a></li>
+            <li>TOWNNOISE</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">靖翼子</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
