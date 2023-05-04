@@ -8,7 +8,7 @@
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
   <script type="text/javascript">
     var dom = document.getElementById('container');
-    var myChart = echarts.init(dom, 'dark', {
+    var myChart = echarts.init(dom,  {
       renderer: 'canvas',
       useDirtyRect: false
     });
@@ -58,12 +58,12 @@
       },
       detail: {
         valueAnimation: true,
-        formatter: '{value} km/h',
+        formatter: '{value} Fb',
         color: 'inherit'
       },
       data: [
         {
-          value: 70
+          value: 90
         }
       ]
     }
@@ -75,7 +75,7 @@ setInterval(function () {
       {
         data: [
           {
-            value: +(Math.random() * 100).toFixed(2)
+            value: +(Math.random() * 140).toFixed(2)
           }
         ]
       }
