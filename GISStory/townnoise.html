@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+
+    var option;
+
+    myChart.showLoading();
+    $.get('./chengdujiedao.geojson', function (chengduJson) {
+      myChart.hideLoading();
+      echarts.registerMap('Chengdu', chengduJson);
+      var data = [{name:"保和街道",value:75.28561453},{name:"草市街街道",value:67.76766091},{name:"草堂街道",value:78.1022864},{name:"茶店子街道",value:76.36518771},{name:"成龙路街道",value:79.95174263},{name:"城厢镇",value:86.73529412},{name:"春熙路街道",value:81.36971047},{name:"簇锦街道",value:82.14872798},{name:"簇桥街道",value:80.92561983},{name:"大丰街道",value:70.75294118},{name:"大面街道",value:81.99336197},{name:"大弯街道",value:89.57142857},{name:"东光街道",value:66.31212058},{name:"东坡街道",value:82.31989247},{name:"东升街道",value:83.84359519},{name:"督院街街道",value:79.64662757},{name:"二仙桥街道",value:107.3557312},{name:"芳草街道",value:138.3191251},{name:"凤凰山街道",value:87.80530973},{name:"福洪乡",value:90.36734694},{name:"抚琴街道",value:137.5674931},{name:"府南街道",value:114.7802908},{name:"府青路街道",value:78.96575342},{name:"公兴街道",value:80.75},{name:"光华街道",value:100.6198126},{name:"桂溪街道",value:76.88382506},{name:"合江亭街道",value:78.88023088},{name:"合作街道",value:81.14234017},{name:"荷花池街道",value:137.021863},{name:"红牌楼街道",value:71.04815696},{name:"洪安镇",value:91.85},{name:"华兴街道",value:83.2715655},{name:"华阳镇街道",value:82.17338038},{name:"黄甲街道",value:80.81481481},{name:"黄田坝街道",value:84.42675159},{name:"黄土镇",value:84.17073171},{name:"黄忠街道",value:77.48854962},{name:"火车南站街道",value:77.10138408},{name:"机投桥街道",value:84.86775632},{name:"建设路街道",value:82.77120536},{name:"浆洗街街道",value:84.30365297},{name:"金花桥街道",value:79.57474227},{name:"金泉街道",value:82.48047809},{name:"金沙街道",value:79.99475524},{name:"晋阳街道",value:83.93838863},{name:"九江街道",value:79.01209677},{name:"九里堤街道",value:85.44444444},{name:"莲新街道",value:79.88265306},{name:"柳江街道",value:80.25519713},{name:"龙泉街道",value:85.61603376},{name:"龙潭街道",value:82.96531792},{name:"龙舟路街道",value:80.48669202},{name:"马家镇",value:86.56743003},{name:"猛追湾街道",value:80.52162162},{name:"弥牟镇",value:89.575},{name:"木兰镇",value:119.4453333},{name:"牛市口街道",value:79.8707483},{name:"郫筒街道",value:83.92929293},{name:"青龙街道",value:85.06098843},{name:"清泉镇",value:92.14285714},{name:"人民北路街道",value:82.051282},{name:"三河街道",value:72.57256778},{name:"三圣街道",value:78.97521866},{name:"三星镇",value:85.57276995},{name:"沙河街道",value:80.27896996},{name:"沙河源街道",value:82.507109},{name:"少城街道",value:77.58503401},{name:"圣灯街道",value:82.5971223},{name:"狮子山街道",value:69.64969136},{name:"十陵街道",value:76.14427861},{name:"石板滩镇",value:92.5},{name:"石羊场街道",value:80.08912287},{name:"书院街街道",value:79.30954879},{name:"双桂路街道",value:79.16795866},{name:"双楠街道",value:130.2604423},{name:"双桥子街道",value:82.61885246},{name:"双水碾街道",value:80.2195122},{name:"水井坊街道",value:79.2209414},{name:"驷马桥街道",value:84.6625},{name:"苏坡街道",value:83.73509545},{name:"太升路街道",value:80.86879433},{name:"桃蹊路街道",value:84.55555556},{name:"天回镇街道",value:81.57142857},{name:"跳蹬河街道",value:84.29087452},{name:"跳伞塔街道",value:83.11312217},{name:"万安镇",value:90.1419295},{name:"万年场街道",value:82.31213873},{name:"汪家拐街道",value:75.35511364},{name:"望江路街道",value:80.91677019},{name:"文家街道",value:87.94871795},{name:"五块石街道",value:67.23376623},{name:"西安路街道",value:130.8796562},{name:"西航港街道",value:77.51785083},{name:"西河镇",value:74.47104247},{name:"西华街道",value:85.45320197},{name:"西御河街道",value:81.52409639},{name:"犀浦镇",value:78.35446686},{name:"祥福镇",value:88.89130435},{name:"肖家河街道",value:105.8266439},{name:"新都镇",value:92.62284483},{name:"新鸿路街道",value:86.58139535},{name:"新华西路街道",value:76.42164179},{name:"兴隆镇",value:80.78571429},{name:"盐市口街道",value:78.01647059},{name:"营门口街道",value:79.54891304},{name:"永宁镇",value:88.5},{name:"玉林街道",value:79.93480176},{name:"赵镇街道",value:87.67666667},{name:"正兴镇",value:79.81300813},{name:"中和街道",value:79.99494666}];
+      data.sort(function (a, b) {
+        return a.value - b.value;
+      });
+      const mapOption = {
+        visualMap: {
+          left: 'right',
+          min: 60,
+          max: 140,
+          inRange: {
+            // prettier-ignore
+            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+          },
+          text: ['High', 'Low'],
+          calculable: true
+        },
+        series: [
+          {
+            id: 'population',
+            type: 'map',
+            roam: true,
+            map: 'Chengdu',
+            animationDurationUpdate: 1000,
+            universalTransition: true,
+            data: data
+          }
+        ]
+      };
+      const barOption = {
+        xAxis: {
+          type: 'value'
+        },
+        yAxis: {
+          type: 'category',
+          axisLabel: {
+            rotate: 30
+          },
+          data: data.map(function (item) {
+            console.log(item.name)
+            return item.name;
+          })
+        },
+        animationDurationUpdate: 1000,
+        visualMap: {
+          left: 'right',
+          min: 0,
+          max: 140,
+          inRange: {
+            // prettier-ignore
+            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+          },
+          text: ['High', 'Low'],
+          calculable: true
+        },
+        series: {
+          type: 'bar',
+          id: 'population',
+          data: data.map(function (item) {
+            return item.value;
+          }),
+
+          universalTransition: true
+        }
+      };
+      let currentOption = mapOption;
+      myChart.setOption(mapOption);
+      myChart.on('click', () => {
+        myChart.setOption(currentOption = currentOption === mapOption ? barOption : mapOption)
+      })
+    });
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+
+</html>

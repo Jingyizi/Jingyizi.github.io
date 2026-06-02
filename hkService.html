@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+ 
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    var ROOT_PATH = 'https://echarts.apache.org/examples';
+    var option;
+
+    const weatherIcons = {
+  Sunny: ROOT_PATH + '/data/asset/img/weather/sunny_128.png',
+  Cloudy: ROOT_PATH + '/data/asset/img/weather/cloudy_128.png',
+  Showers: ROOT_PATH + '/data/asset/img/weather/showers_128.png'
+};
+option = {
+  title: {
+    text: '香港2018年服务输出饼状图',
+    subtext: '单位：百万港元',
+    left: 'center'
+  },
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b} : {c} ({d}%)'
+  },
+  legend: {
+    bottom: 10,
+    left: 'center',
+    data: ['保养及维修服务', '旅游', '建造', '保险及退休金服务', '运输','金融服务','知识产权使用费','电子通讯、电脑及资讯服务','个人、文化及康乐服务','其他商业服务']
+  },
+  series: [
+    {
+      type: 'pie',
+      radius: '65%',
+      center: ['50%', '50%'],
+      selectedMode: 'single',
+      data: [
+        {
+          value: 258847,
+          name: '运输',
+          
+        },
+        { value: 117258, name: '其他商业服务' },
+        { value: 2711, name: '个人、文化及康乐服务' },
+        { value: 23136, name: '电子通讯、电脑及资讯服务' },
+        { value: 5821, name: '知识产权使用费' },
+        { value: 174083, name: '金融服务' },
+        { value: 11664, name: '保险及退休金服务' },
+        { value: 782, name: '建造' },
+        { value: 2856, name: '保养及维修服务' }
+      ],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Create and style clusters</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiamluZ3lpemkiLCJhIjoiY2xmeTExNHprMDNxZzNkbXIwbDc3N3htOCJ9.cSx84chR-1CCKW8g1r4FAA';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/mapbox/light-v11',
+        center: [114.2, 22.25],
+        zoom: 11.5
+    });
+
+    map.on('load', () => {
+        // Add a new source from our GeoJSON data and
+        // set the 'cluster' option to true. GL-JS will
+        // add the point_count property to your source data.
+        map.addSource('earthquakes', {
+            type: 'geojson',
+            // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
+            // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+            data: {"type":"FeatureCollection","features":[{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.1","geometry":{"type":"Point","coordinates":[812452.4018,839377.1705]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":1,"CP_EN":"Shenzhen Bay Control Point","CP_TC":"深圳灣管制站","CP_SC":"深圳湾管制站"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.2","geometry":{"type":"Point","coordinates":[814553.0003,825866.9674]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":2,"CP_EN":"Tuen Mun Ferry Terminal","CP_TC":"屯門客運碼頭","CP_SC":"屯门客运码头"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.3","geometry":{"type":"Point","coordinates":[833734.9994,816653.9676]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":3,"CP_EN":"Hong Kong-Macau Ferry Terminal","CP_TC":"港澳客運碼頭","CP_SC":"港澳客运码头"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.4","geometry":{"type":"Point","coordinates":[835282.1003,817946.1993]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":4,"CP_EN":"Hong Kong-China Ferry Terminal","CP_TC":"中國客運碼頭","CP_SC":"中国客运码头"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.5","geometry":{"type":"Point","coordinates":[841042.0003,845478.9662]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":5,"CP_EN":"Sha Tau Kok Control Point","CP_TC":"沙頭角管制站","CP_SC":"沙头角管制站"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.6","geometry":{"type":"Point","coordinates":[831323.9998,844186.9663]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":6,"CP_EN":"Man Kam To Control Point","CP_TC":"文錦渡管制站","CP_SC":"文锦渡管制站"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.7","geometry":{"type":"Point","coordinates":[824822.0001,841711.9673]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":7,"CP_EN":"Lok Ma Chau Spur Line Control Point","CP_TC":"落馬洲支線管制站","CP_SC":"落马洲支线管制站"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.8","geometry":{"type":"Point","coordinates":[825688,841084.9668]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":8,"CP_EN":"Lok Ma Chau Control Point","CP_TC":"落馬洲管制站","CP_SC":"落马洲管制站"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.9","geometry":{"type":"Point","coordinates":[836806.9997,818212.967]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":9,"CP_EN":"Hung Hom Control Point","CP_TC":"紅磡管制站","CP_SC":"红磡管制站"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.10","geometry":{"type":"Point","coordinates":[829740.0001,843308.9663]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":10,"CP_EN":"Lo Wu Control Point","CP_TC":"羅湖管制站","CP_SC":"罗湖管制站"}},{"type":"Feature","id":"SDPVS_PLAND_6AMYHV5683JW_0.11","geometry":{"type":"Point","coordinates":[811349,819630.9673]},"geometry_name":"ORA_GEOMETRY","properties":{"OGR_FID":11,"CP_EN":"Hong Kong International Airport","CP_TC":"香港國際機場","CP_SC":"香港国际机场"}}],"totalFeatures":11,"numberMatched":11,"numberReturned":11,"timeStamp":"2023-04-03T15:05:48.307Z","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:EPSG::2326"}}},
+            cluster: true,
+            clusterMaxZoom: 14, // Max zoom to cluster points on
+            clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+        });
+
+        map.addLayer({
+            id: 'clusters',
+            type: 'circle',
+            source: 'earthquakes',
+            filter: ['has', 'point_count'],
+            paint: {
+                // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+                // with three steps to implement three types of circles:
+                //   * Blue, 20px circles when point count is less than 100
+                //   * Yellow, 30px circles when point count is between 100 and 750
+                //   * Pink, 40px circles when point count is greater than or equal to 750
+                'circle-color': [
+                    'step',
+                    ['get', 'point_count'],
+                    '#51bbd6',
+                    1,
+                    '#f1f075',
+                    3,
+                    '#f28cb1'
+                ],
+                'circle-radius': [
+                    'step',
+                    ['get', 'point_count'],
+                    20,
+                    1,
+                    30,
+                    3,
+                    40
+                ]
+            }
+        });
+
+        map.addLayer({
+            id: 'cluster-count',
+            type: 'symbol',
+            source: 'earthquakes',
+            filter: ['has', 'point_count'],
+            layout: {
+                'text-field': ['get', 'point_count_abbreviated'],
+                'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                'text-size': 12
+            }
+        });
+
+        map.addLayer({
+            id: 'unclustered-point',
+            type: 'circle',
+            source: 'earthquakes',
+            filter: ['!', ['has', 'point_count']],
+            paint: {
+                'circle-color': '#11b4da',
+                'circle-radius': 4,
+                'circle-stroke-width': 1,
+                'circle-stroke-color': '#fff'
+            }
+        });
+
+        // inspect a cluster on click
+        map.on('click', 'clusters', (e) => {
+            const features = map.queryRenderedFeatures(e.point, {
+                layers: ['clusters']
+            });
+            const clusterId = features[0].properties.cluster_id;
+            map.getSource('earthquakes').getClusterExpansionZoom(
+                clusterId,
+                (err, zoom) => {
+                    if (err) return;
+
+                    map.easeTo({
+                        center: features[0].geometry.coordinates,
+                        zoom: zoom
+                    });
+                }
+            );
+        });
+
+        // When a click event occurs on a feature in
+        // the unclustered-point layer, open a popup at
+        // the location of the feature, with
+        // description HTML from its properties.
+        map.on('click', 'unclustered-point', (e) => {
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const mag = e.features[0].properties.mag;
+            const tsunami =
+                e.features[0].properties.tsunami === 1 ? 'yes' : 'no';
+
+            // Ensure that if the map is zoomed out such that
+            // multiple copies of the feature are visible, the
+            // popup appears over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(
+                    `magnitude: ${mag}<br>Was there a tsunami?: ${tsunami}`
+                )
+                .addTo(map);
+        });
+
+        map.on('mouseenter', 'clusters', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        map.on('mouseleave', 'clusters', () => {
+            map.getCanvas().style.cursor = '';
+        });
+    });
+</script>
+
+</body>
+</html>
