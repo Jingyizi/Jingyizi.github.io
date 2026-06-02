@@ -184,6 +184,15 @@
                 border-radius: 8px;
                 text-align: center;
               }
+              .intro-card .tag-pill {
+                display: inline-block;
+                background: #f0f0f0;
+                color: #555;
+                padding: 0.3rem 0.8rem;
+                border-radius: 16px;
+                margin: 0.2rem 0.3rem;
+                font-size: 0.95rem;
+              }
               .intro-card .links {
                 display: flex;
                 justify-content: center;
@@ -207,6 +216,10 @@
                 color: #fff;
               }
               @media (prefers-color-scheme: dark) {
+                .intro-card .tag-pill {
+                  background: #333;
+                  color: #ccc;
+                }
                 .intro-card .placeholder {
                   border-color: #555;
                   color: #777;
@@ -229,27 +242,34 @@
 
               <div class="section">
                 <h3><i class="fa fa-user"></i>关于我</h3>
-                <!-- TODO: 填写个人简介 -->
-                <p class="placeholder">这里放一段自我介绍……</p>
+                <p style="font-size: 1.05rem; line-height: 1.8;">
+                  北京师范大学 地图学与地理信息系统 博士生
+                </p>
               </div>
 
               <div class="section">
                 <h3><i class="fa fa-flask"></i>研究方向</h3>
-                <!-- TODO: 填写研究方向 -->
-                <p class="placeholder">这里写你的研究方向，比如 GIS、遥感、时空数据分析……</p>
+                <p style="font-size: 1.05rem; line-height: 1.8;">
+                  <span class="tag-pill">复合水旱灾害遥感监测</span>
+                  <span class="tag-pill">地理智能</span>
+                </p>
               </div>
 
               <div class="section">
                 <h3><i class="fa fa-link"></i>链接</h3>
                 <div class="links">
-                  <!-- TODO: 替换为你的真实链接 -->
+                  <a href="https://geo.bnu.edu.cn/cdrr/cdrr_cysyy/ec752a1b376c4360a746e52d1d746b35.html" target="_blank" rel="noopener">
+                    <i class="fa fa-university"></i> 机构主页
+                  </a>
+                  <a href="https://www.researchgate.net/profile/Pengzhou-Chen" target="_blank" rel="noopener">
+                    <i class="fab fa-researchgate"></i> ResearchGate
+                  </a>
                   <a href="https://github.com/Jingyizi" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> GitHub
                   </a>
-                  <a href="mailto:your-email@example.com">
+                  <a href="mailto:pengzhou_chen@mail.bnu.edu.cn">
                     <i class="fa fa-envelope"></i> Email
                   </a>
-                  <!-- <a href="#" target="_blank"><i class="fab fa-google"></i> Google Scholar</a> -->
                 </div>
               </div>
             </div>
