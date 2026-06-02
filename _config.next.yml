@@ -63,9 +63,9 @@ local_search:
 codeblock:
   highlight_theme: normal
 
-# Copyright
+# Copyright (set to empty string to disable)
 creative_commons:
-  license: false
+  license: ''
 
 # Back to top
 back2top:
