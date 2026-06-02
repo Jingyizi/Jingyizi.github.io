@@ -1,0 +1,98 @@
+# NexT.Gemini 主题配置
+# 文档: https://theme-next.js.org/docs/
+
+# Scheme
+scheme: Gemini
+darkmode: false
+
+# Site Info
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+  apple_touch_icon: /images/apple-touch-icon-next.png
+  safari_pinned_tab: /images/logo.svg
+
+# Custom Logo
+avatar:
+  url: /images/custom-logo.png
+  rounded: true
+
+# Social Links
+social:
+  GitHub: https://github.com/Jingyizi || fab fa-github
+  # Email: mailto:your-email@example.com || fa fa-envelope
+  # Google Scholar: https://scholar.google.com/ || fab fa-google
+
+# Menu
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  # about: /about/ || fa fa-user
+  # tags: /tags/ || fa fa-tags
+
+# Sidebar
+sidebar:
+  position: left
+  display: post
+  padding: 18
+  offset: 12
+
+# Motion (动画)
+motion:
+  enable: true
+  async: false
+  transition:
+    menu_item: fadeInDown
+    post_block: fadeIn
+    post_header: fadeInDown
+    post_body: fadeInDown
+    coll_header: fadeInLeft
+    sidebar: fadeInUp
+
+# Footer
+footer:
+  powered:
+    enable: true
+    icon: fa fa-heart
+
+# Local Search
+local_search:
+  enable: false
+
+# Code Highlight
+codeblock:
+  highlight_theme: normal
+
+# Copyright
+creative_commons:
+  license: false
+
+# Back to top
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# Reading progress
+reading_progress:
+  enable: false
+
+# Bookmarks
+bookmark:
+  enable: false
+
+# Pjax
+pjax: true
+
+# Comments
+comments:
+  style: tabs
+  lazyload: false
+  storage: true
+
+# -------------------------------------------------------------------
+# 自定义首页说明：
+# 主页现在展示个人信息卡片（关于我、研究方向、链接）。
+# 发布新文章时，文章会自动列在个人信息卡片下方。
+# 旧文章（GISStory, Hello World）设置了 hide: true，不会出现在首页。
+# -------------------------------------------------------------------
