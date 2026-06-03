@@ -2508,7 +2508,7 @@ ul.breadcrumb li:last-child {
   }
 }
 body {
-  background: url("https://jingyizi.github.io/image/background.jpg");
+  background: url("/image/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
