@@ -1,34 +1,30 @@
 /* ============================================
-   首页动态效果 & 个人介绍卡片
-   1. 导航栏透明 → 滚动后显色
-   2. 文章卡片滚动渐显
-   3. 首页个人介绍卡片注入
+   首页动态效果 + 个人介绍卡片
+   1. 导航栏 scroll 变色 (#navbar)
+   2. 文章卡片 IntersectionObserver 渐显
+   3. 首页注入个人介绍卡片
    ============================================ */
 (function () {
   // ========== 1. 导航栏滚动变色 ==========
-  var navbar = document.querySelector('.navbar');
+  var navbar = document.querySelector('#navbar');
   if (navbar) {
-    var scrollThreshold = 50;
     function updateNavbar() {
-      if (window.scrollY > scrollThreshold) {
+      if (window.scrollY > 50) {
         navbar.classList.add('navbar-colored');
       } else {
         navbar.classList.remove('navbar-colored');
       }
     }
     window.addEventListener('scroll', updateNavbar, { passive: true });
-    // 初始检查（防止刷新时已滚动）
     updateNavbar();
   }
 
-  // ========== 2. 内容渐显 (IntersectionObserver) ==========
-  // 监听所有文章卡片和可动效元素
+  // ========== 2. IntersectionObserver 卡片渐显 ==========
   var observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('card-visible');
-          // 可见后不再观察
           observer.unobserve(entry.target);
         }
       });
@@ -36,23 +32,12 @@
     { threshold: 0.15, rootMargin: '0px 0px -30px 0px' }
   );
 
-  // 延迟观察 — 等 DOM 可能被 JS 修改后再抓取
   function observeCards() {
-    // Fluid 可能用不同 class 渲染文章卡片
-    // （intro-card 有自己的 CSS card-rise 动画，不在此观察以免重复）
-    var cards = document.querySelectorAll('.index-card, .post-card, .article-card, #board article, .post-list .post');
+    // Fluid 首页文章卡片的真实 class: .index-card
+    var cards = document.querySelectorAll('.index-card');
     cards.forEach(function (card) {
       observer.observe(card);
     });
-  }
-
-  // 初次观察
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      setTimeout(observeCards, 100);
-    });
-  } else {
-    setTimeout(observeCards, 100);
   }
 
   // ========== 3. 首页个人介绍卡片 ==========
@@ -60,12 +45,13 @@
     if (!document.querySelector('.index')) return;
     if (document.querySelector('.intro-card-wrapper')) return;
 
-    // Fluid 首页文章列表容器（兼容多种 class 名）
-    var content = document.querySelector('.index .post-list')
-      || document.querySelector('.index #board')
-      || document.querySelector('.index .post-container');
-
-    if (!content) return;
+    // 找到文章卡片所在的父容器（#board 内的 col）
+    // 真实 DOM: #board > .container > .row > .col-12.col-md-10.m-auto
+    var container = document.querySelector('#board .col-md-10');
+    if (!container) {
+      container = document.querySelector('#board');
+    }
+    if (!container) return;
 
     var card = document.createElement('div');
     card.className = 'intro-card-wrapper';
@@ -85,13 +71,18 @@
       '  <a href="mailto:pengzhou_chen@mail.bnu.edu.cn">✉️ Email</a>' +
       '</div>';
 
-    content.insertBefore(card, content.firstChild);
-    // intro-card 由 CSS card-rise 动画驱动，不再用 IntersectionObserver
+    container.insertBefore(card, container.firstChild);
+  }
+
+  // ========== 启动 ==========
+  function init() {
+    injectIntroCard();
+    setTimeout(observeCards, 200);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectIntroCard);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    injectIntroCard();
+    init();
   }
 })();
