@@ -1,4 +1,0 @@
-/* 全站背景图 — 保留原 background.jpg */
-body {
-  background: url("/images/background.jpg") center/cover fixed;
-}

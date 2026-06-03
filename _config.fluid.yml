@@ -9,12 +9,13 @@
 favicon: /images/custom-logo.png
 apple_touch_icon: /images/custom-logo.png
 
-# 自定义 CSS（背景图）
+# 自定义 CSS
 custom_css:
-  - /css/background.css
+  - /css/custom.css
 
-# 自定义 HTML
-custom_head: '<meta name="baidu-site-verification" content="code-xxx" />'
+# 自定义 JS（首页个人卡片注入）
+custom_js:
+  - /js/intro-card.js
 
 # 懒加载
 lazyload:
@@ -62,7 +63,7 @@ color:
 navbar:
   blog_title: 靖翼之憩
   ground_glass:
-    enable: true                    # 毛玻璃效果 — 现代感，不死板
+    enable: false                    # 关闭毛玻璃 → 实色背景，专业稳重
   menu:
     - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
     - { key: 'archive', link: '/archives/', icon: 'iconfont icon-archive-fill' }
@@ -73,10 +74,10 @@ navbar:
 # 首页
 #---------------------------
 index:
-  # banner 图使用背景图（与全局背景统一）
+  # banner 大图 — 首页的英雄区
   banner_img: /images/background.jpg
-  banner_img_height: 70              # 占据视口 70% — 大气
-  banner_mask_alpha: 0.35            # 遮罩让标题可读，同时保留图片氛围
+  banner_img_height: 65              # 占视口 65%，大气但不压倒内容
+  banner_mask_alpha: 0.4             # 遮罩深一点让文字更清晰
 
   # 打字机标语
   slogan:

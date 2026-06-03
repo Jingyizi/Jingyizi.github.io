@@ -1,0 +1,281 @@
+/* ============================================
+   靖翼之憩 — 自定义样式
+   设计方向：严肃学术风 + 适度温暖
+   基于 Fluid 主题 (Material Design)
+   ============================================ */
+
+/* ------------------------------------------
+   1. 全站背景
+   ------------------------------------------ */
+body {
+  background: url("/images/background.jpg") center/cover fixed;
+}
+
+/* ------------------------------------------
+   2. 导航栏 — 实色深灰蓝 + 底部阴影
+   ------------------------------------------ */
+.navbar {
+  background: #2f4154 !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+}
+
+/* 移动端菜单按钮 */
+.navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ------------------------------------------
+   3. Banner 文字区
+   ------------------------------------------ */
+.banner-text {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.banner-text h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px;
+}
+
+/* ------------------------------------------
+   4. 内容区容器 — 半透明白色毛玻璃底
+   ------------------------------------------ */
+#content-outer {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ------------------------------------------
+   5. 文章卡片 — 白色底 + 圆角 + 阴影 + 悬停
+   ------------------------------------------ */
+.index-card {
+  background: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  margin-bottom: 1.5rem !important;
+  padding: 1.8rem 2rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.index-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 卡片内标题 */
+.index-card h1 a,
+.index-card h2 a,
+.index-card .post-title a {
+  color: #2c3e50 !important;
+  font-weight: 600 !important;
+  font-size: 1.3rem !important;
+  text-decoration: none !important;
+}
+.index-card h1 a:hover,
+.index-card h2 a:hover {
+  color: #4c6cb3 !important;
+}
+
+/* 卡片内摘要 */
+.index-card .post-excerpt,
+.index-card .excerpt {
+  color: #555 !important;
+  line-height: 1.8 !important;
+}
+
+/* 卡片内元信息 */
+.index-card .post-meta,
+.index-card .post-metas {
+  color: #999 !important;
+  font-size: 0.9rem !important;
+}
+
+/* 标签药丸 */
+.index-card .category a,
+.index-card .tag a,
+.index-card .badge,
+.index-card .chip {
+  display: inline-block !important;
+  background: #eef1f6 !important;
+  color: #5a6d80 !important;
+  padding: 2px 10px !important;
+  border-radius: 12px !important;
+  font-size: 0.82rem !important;
+  text-decoration: none !important;
+  margin-right: 4px !important;
+  transition: background 0.2s !important;
+}
+.index-card .category a:hover,
+.index-card .tag a:hover {
+  background: #4c6cb3 !important;
+  color: #fff !important;
+}
+
+/* ------------------------------------------
+   6. 首页个人介绍卡片（JS 动态插入）
+   ------------------------------------------ */
+.intro-card-wrapper {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.07);
+  padding: 2.2rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+.intro-card-wrapper .intro-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid #e0e3e8;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+.intro-card-wrapper .intro-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+}
+.intro-card-wrapper .intro-affiliation {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 0.8rem;
+}
+.intro-card-wrapper .intro-subtitle {
+  font-size: 0.95rem;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.intro-card-wrapper .intro-tags {
+  margin-bottom: 1rem;
+}
+.intro-card-wrapper .intro-tags span {
+  display: inline-block;
+  background: #f0f2f5;
+  color: #4c6cb3;
+  padding: 5px 16px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  margin: 4px 6px;
+  font-weight: 500;
+}
+.intro-card-wrapper .intro-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+.intro-card-wrapper .intro-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 20px;
+  background: #f5f6f8;
+  color: #555;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.intro-card-wrapper .intro-links a:hover {
+  background: #4c6cb3;
+  color: #fff;
+}
+
+/* ------------------------------------------
+   7. 文章详情页
+   ------------------------------------------ */
+.post-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  line-height: 1.9;
+  color: #3c4858;
+}
+.post-content h1, .post-content h2, .post-content h3 {
+  color: #2c3e50;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.post-content h2 {
+  border-bottom: 2px solid #eef1f6;
+  padding-bottom: 0.4rem;
+}
+.post-content a { color: #4c6cb3; }
+.post-content a:hover { color: #2f4154; }
+.post-content blockquote {
+  border-left: 4px solid #4c6cb3;
+  background: #f8f9fb;
+  padding: 1rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  color: #666;
+  font-style: italic;
+}
+.post-content img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.post-content pre, .post-content code {
+  border-radius: 8px;
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ------------------------------------------
+   8. 页脚
+   ------------------------------------------ */
+footer {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(8px);
+  color: #999 !important;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+footer a {
+  color: #4c6cb3 !important;
+}
+
+/* ------------------------------------------
+   9. 侧边 TOC（文章目录）
+   ------------------------------------------ */
+#toc {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ------------------------------------------
+   10. 响应式优化
+   ------------------------------------------ */
+@media (max-width: 768px) {
+  .banner-text h1 { font-size: 1.8rem !important; }
+  .post-content { padding: 1.2rem; }
+  .index-card { padding: 1.2rem !important; }
+  #content-outer {
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: -24px;
+  }
+}
