@@ -68,6 +68,7 @@ navbar:
     - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
     - { key: 'archive', link: '/archives/', icon: 'iconfont icon-archive-fill' }
     - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
+    - { key: 'publications', link: '/publications/', icon: 'iconfont icon-book-fill', name: '成果' }
     - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill' }
 
 #---------------------------

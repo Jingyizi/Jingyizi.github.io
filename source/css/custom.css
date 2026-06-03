@@ -297,14 +297,74 @@ footer a { color: #4c6cb3 !important; }
 }
 
 /* ------------------------------------------
-   10. 非首页 — 不显示下翻箭头
+   10. 出版物/成果页 — 学术列表样式
+   ------------------------------------------ */
+.pub-list {
+  margin-bottom: 2rem;
+}
+.pub-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #4c6cb3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pub-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border-left-color: #2f4154;
+}
+.pub-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.4rem;
+}
+.pub-authors {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+.pub-venue {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+.pub-meta {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.2rem;
+}
+.pub-links {
+  margin-top: 0.4rem;
+}
+.pub-links a {
+  display: inline-block;
+  font-size: 0.88rem;
+  color: #4c6cb3;
+  text-decoration: none;
+  margin-right: 1rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #eef1f6;
+  transition: all 0.2s;
+}
+.pub-links a:hover {
+  background: #4c6cb3;
+  color: #fff;
+}
+
+/* ------------------------------------------
+   11. 非首页 — 不显示下翻箭头
    ------------------------------------------ */
 .page:not(.index) .scroll-down-bar {
   display: none !important;
 }
 
 /* ------------------------------------------
-   11. 响应式
+   12. 响应式
    ------------------------------------------ */
 @media (max-width: 768px) {
   .banner-text .h2 { font-size: 1.3rem; }
