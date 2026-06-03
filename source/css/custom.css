@@ -1,6 +1,6 @@
 /* ============================================
    靖翼之憩 — 自定义样式
-   设计方向：严肃学术风 + 适度温暖
+   设计方向：全屏 Hero + 下翻揭晓 + 动效
    基于 Fluid 主题 (Material Design)
    ============================================ */
 
@@ -12,40 +12,111 @@ body {
 }
 
 /* ------------------------------------------
-   2. 导航栏 — 实色深灰蓝 + 底部阴影
+   2. 导航栏 — 顶部透明 → 滚动后显色
    ------------------------------------------ */
 .navbar {
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: background 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+/* JS 在滚动时添加此 class */
+.navbar.navbar-colored {
   background: #2f4154 !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
   color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
   color: #fff !important;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 6px;
 }
 
 /* 移动端菜单按钮 */
 .navbar .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* ------------------------------------------
-   3. Banner 文字区
+   3. 全屏 Banner + 下翻箭头
    ------------------------------------------ */
+/* 确保 banner 容器撑满视口 */
+.banner {
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 下翻箭头 — bouncing chevron */
+.banner::after {
+  content: '';
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  border-right: 2.5px solid rgba(255, 255, 255, 0.85);
+  border-bottom: 2.5px solid rgba(255, 255, 255, 0.85);
+  transform: translateX(-50%) rotate(45deg);
+  animation: scroll-bounce 2s ease-in-out infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateX(-50%) rotate(45deg) translateY(0); opacity: 0.6; }
+  50%      { transform: translateX(-50%) rotate(45deg) translateY(12px); opacity: 1; }
+}
+
+/* 下翻文字提示 */
+.banner::before {
+  content: '向下滚动';
+  position: absolute;
+  bottom: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  z-index: 5;
+  pointer-events: none;
+  animation: fade-hint 2s ease-in-out infinite;
+}
+
+@keyframes fade-hint {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+
+/* Banner 文字区 */
 .banner-text {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 .banner-text h1 {
-  font-size: 2.5rem !important;
+  font-size: 2.8rem !important;
   font-weight: 700 !important;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  animation: fadeInDown 0.8s ease-out;
+}
+.banner-text .subtitle,
+.banner-text p {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ------------------------------------------
@@ -64,7 +135,7 @@ body {
 }
 
 /* ------------------------------------------
-   5. 文章卡片 — 白色底 + 圆角 + 阴影 + 悬停
+   5. 文章卡片 — 白色底 + 圆角 + 阴影 + 渐显动效
    ------------------------------------------ */
 .index-card {
   background: #fff !important;
@@ -73,8 +144,14 @@ body {
   margin-bottom: 1.5rem !important;
   padding: 1.8rem 2rem !important;
   border: 1px solid rgba(0, 0, 0, 0.04) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.5s ease !important;
 }
+
+/* JS IntersectionObserver 触发 */
+.index-card.card-visible {
+  opacity: 1;
+}
+
 .index-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1) !important;
@@ -130,7 +207,7 @@ body {
 }
 
 /* ------------------------------------------
-   6. 首页个人介绍卡片（JS 动态插入）
+   6. 首页个人介绍卡片（JS 动态插入 + 渐显）
    ------------------------------------------ */
 .intro-card-wrapper {
   background: #fff;
@@ -140,6 +217,12 @@ body {
   margin-bottom: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.04);
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: card-rise 0.6s ease-out 0.3s forwards;
+}
+@keyframes card-rise {
+  to { opacity: 1; transform: translateY(0); }
 }
 .intro-card-wrapper .intro-avatar {
   width: 96px;
@@ -252,9 +335,7 @@ footer {
   padding: 1.5rem 0;
   font-size: 0.9rem;
 }
-footer a {
-  color: #4c6cb3 !important;
-}
+footer a { color: #4c6cb3 !important; }
 
 /* ------------------------------------------
    9. 侧边 TOC（文章目录）
@@ -267,8 +348,15 @@ footer a {
 }
 
 /* ------------------------------------------
-   10. 响应式优化
+   10. 其他动效
    ------------------------------------------ */
+/* 平滑滚动（非首页 banner 下翻不需要箭头） */
+.page:not(.index) .banner::after,
+.page:not(.index) .banner::before {
+  display: none;
+}
+
+/* 移动端隐藏下翻提示 */
 @media (max-width: 768px) {
   .banner-text h1 { font-size: 1.8rem !important; }
   .post-content { padding: 1.2rem; }

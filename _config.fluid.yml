@@ -76,7 +76,7 @@ navbar:
 index:
   # banner 大图 — 首页的英雄区
   banner_img: /images/background.jpg
-  banner_img_height: 65              # 占视口 65%，大气但不压倒内容
+  banner_img_height: 100             # 全屏 banner — 下翻才显示文章
   banner_mask_alpha: 0.4             # 遮罩深一点让文字更清晰
 
   # 打字机标语
