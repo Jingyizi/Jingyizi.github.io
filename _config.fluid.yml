@@ -1,0 +1,244 @@
+#------------------------------------
+# Fluid 主题配置 | 靖翼之憩
+# 文档: https://hexo.fluid-dev.com/docs/guide/
+#------------------------------------
+
+#---------------------------
+# 全局
+#---------------------------
+favicon: /images/custom-logo.png
+apple_touch_icon: /images/custom-logo.png
+
+# 自定义 CSS（背景图）
+custom_css:
+  - /css/background.css
+
+# 自定义 HTML
+custom_head: '<meta name="baidu-site-verification" content="code-xxx" />'
+
+# 懒加载
+lazyload:
+  enable: true
+  onlypost: false
+  loading_img: /images/custom-logo.png
+
+# 平滑滚动
+smooth_scroll: true
+
+# 网页访问统计
+web_analytics:
+  enable: false
+
+# 图片设置
+images:
+  enable: true
+  img_loading: lazy
+  figcaption: true
+
+# 字体设置
+font:
+  font_size: 16px
+  letter_spacing: false
+  code_font_size: 85%
+
+# 颜色（严肃学术风 + 适度温暖）
+color:
+  primary_color: "#4c6cb3"         # 蓝灰色 — 稳重但不冰冷
+  primary_color_dark: "#92b5ff"
+  navbar_bg_color: "#2f4154"       # 深灰蓝 — 专业的顶部栏
+  navbar_bg_color_dark: "#1a1a2e"
+  text_color: "#3c4858"
+  text_color_dark: "#c4c6c9"
+  link_color: "#007bff"
+  link_color_dark: "#4dabf7"
+  background_color: "#eee"
+  background_color_dark: "#181c27"
+  heading_color: "#2c3e50"
+  heading_color_dark: "#cccccc"
+
+#---------------------------
+# 导航栏（顶部）
+#---------------------------
+navbar:
+  blog_title: 靖翼之憩
+  ground_glass:
+    enable: true                    # 毛玻璃效果 — 现代感，不死板
+  menu:
+    - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
+    - { key: 'archive', link: '/archives/', icon: 'iconfont icon-archive-fill' }
+    - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
+    - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill' }
+
+#---------------------------
+# 首页
+#---------------------------
+index:
+  # banner 图使用背景图（与全局背景统一）
+  banner_img: /images/background.jpg
+  banner_img_height: 70              # 占据视口 70% — 大气
+  banner_mask_alpha: 0.35            # 遮罩让标题可读，同时保留图片氛围
+
+  # 打字机标语
+  slogan:
+    enable: true
+    text: "挫其锐解其纷，和其光同其尘"
+
+  # 自动摘要
+  auto_excerpt:
+    enable: true
+
+  # 文章跳转
+  post_url_target: _self
+
+  # 首页文章元信息
+  post_meta:
+    date: true
+    category: true
+    tag: true
+
+  # 置顶
+  post_sticky:
+    enable: true
+    icon: 'iconfont icon-top'
+
+#---------------------------
+# 文章页
+#---------------------------
+post:
+  banner_img: /images/background.jpg
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+
+  # 文章默认封面图（列表中的缩略图）
+  default_index_img: /images/background.jpg
+
+  # 文章元信息
+  meta:
+    author:
+      enable: false
+    date:
+      enable: true
+      format: "YYYY-MM-DD"
+    wordcount:
+      enable: false
+    min2read:
+      enable: false
+    views:
+      enable: false
+
+  # 版权声明
+  copyright:
+    enable: true
+    content: '
+      本文由作者原创，采用
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">
+        CC BY-NC-SA 4.0
+      </a> 许可协议
+    '
+
+  # 上一篇/下一篇
+  prev_next:
+    enable: true
+
+  # 脚注
+  footnote:
+    enable: true
+
+  # 标签
+  tag:
+    enable: true
+
+  # 评论（暂不开启，后续可按需启用 Waline/Giscus）
+  comments:
+    enable: false
+    type: giscus
+
+  # 文章目录
+  toc:
+    enable: true
+    headingSelector: "h1,h2,h3,h4,h5,h6"
+    collapse: false
+
+#---------------------------
+# 关于页（个人主页）
+#---------------------------
+about:
+  enable: true
+  banner_img: /images/background.jpg
+  banner_img_height: 55
+  banner_mask_alpha: 0.3
+  avatar: /images/custom-logo.png
+  name: "靖翼子"
+  intro: "北京师范大学 地图学与地理信息系统 博士生"
+  icons:
+    - { class: "iconfont icon-github-fill", link: "https://github.com/Jingyizi", tip: "GitHub" }
+    - { class: "iconfont icon-email-fill", link: "mailto:pengzhou_chen@mail.bnu.edu.cn", tip: "Email" }
+    - { class: "iconfont icon-link-fill", link: "https://www.researchgate.net/profile/Pengzhou-Chen", tip: "ResearchGate" }
+
+#---------------------------
+# 归档页
+#---------------------------
+archive:
+  banner_img: /images/background.jpg
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+
+#---------------------------
+# 分类页
+#---------------------------
+category:
+  banner_img: /images/background.jpg
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+
+#---------------------------
+# 标签页
+#---------------------------
+tag:
+  banner_img: /images/background.jpg
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+
+#---------------------------
+# 页脚
+#---------------------------
+footer:
+  content: '
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+  '
+  statistics:
+    enable: false
+  beian:
+    enable: false
+
+#---------------------------
+# 代码块
+#---------------------------
+code:
+  copy_btn: true
+  highlight:
+    enable: true
+    line_number: true
+    lib: "highlightjs"
+    highlightjs:
+      style: "Github Gist"
+      bg_color: false
+
+#---------------------------
+# 本地搜索
+#---------------------------
+local_search:
+  enable: true
+
+#---------------------------
+# 趣味功能
+#---------------------------
+fun_features:
+  typing:
+    enable: true
+    typeSpeed: 100
+    cursorChar: '_'
+    loop: false
+    scope: subtitle

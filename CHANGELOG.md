@@ -4,24 +4,58 @@
 
 ---
 
-## 2026-06-03
+## 2026-06-03 (下午)
 
-### 修复自动部署（第 N 次尝试，终于搞对）
+### 🎨 主题切换：NexT.Gemini → Fluid
 
-- **问题**：`deploy.yml` 用的 `actions/deploy-pages` 要求 Pages 源设为 "GitHub Actions"，但之前一直设为 "Deploy from a branch"，导致 Hexo 自动构建从未真正生效。
-- **解决**：将 `deploy.yml` 改为 `peaceiris/actions-gh-pages@v4`，把 Hexo 生成的静态文件推送到 `gh-pages` 分支。Pages 源只需选 "Deploy from a branch" → `gh-pages` → `/ (root)` 即可。
-- **权限**：workflow 需要 `contents: write`（对应仓库 Settings → Actions → General → "Read and write permissions"）。
+- **动机**：NexT 外观过时，希望换一个更现代、有学者气质（顶部导航栏 + 严肃但不死板）的主题。
+- **新主题**：[Fluid](https://github.com/fluid-dev/hexo-theme-fluid) v1.x —— Material Design 风格，中文社区活跃，性能优异。
+- **配置**：创建 `_config.fluid.yml`，包含毛玻璃导航栏、打字机标语、本地搜索、CC 版权声明等。
+- **背景图**：保留 `background.jpg`，通过 `source/css/background.css` 引入（仅 5 行 CSS），替代原来的 2517 行 `css/main.css`。
+- **首页**：不再手写 HTML，由 Fluid 自动生成（banner 大图 + 个人信息 + 文章列表）。
+- **导航**：顶部导航栏（Home / Archives / Tags / About），毛玻璃效果。
+- **新页面**：创建 About、Archives、Tags、Categories 四个功能页。
 
-### 发布第一篇科研日常博客（手写 HTML 过渡版）
+### 🗂️ 归档旧文件
 
-- 因 Hexo 自动部署尚未跑通，直接手写了 `2026/06/02/hello-world/index.html` 作为过渡。
-- 更新 `archives/index.html`，从占位文字改为真实文章列表（2026 + 2023 共 3 篇）。
-- 更新 `index.html` 侧边栏日志计数：0 → 3。
+- 创建 `_archive/` 目录，将所有 NexT 相关自定义文件归档：
+  - `_archive/nexT-theme/`：手写首页、CSS、归档页、NexT 配置、favicon
+  - `_archive/docs/`：旧版 CHANGELOG、GUIDE、README
+- 清理根目录旧构建产物（`css/`、`js/`、`archives/`、`2023/`、`2026/`、`images/`、`GISStory/`）。
 
-### 添加 .nojekyll（解决 CDN 缓存问题）
+### 简化部署
 
-- 问题：GitHub Pages 默认用 Jekyll 处理站点，非 Jekyll 站点（如 Hexo 生成的）若不加 `.nojekyll`，Jekyll 静默失败，GitHub 返回旧的缓存版本，导致页面迟迟不刷新。
-- 解决：在根目录创建空文件 `.nojekyll`，告知 GitHub 跳过 Jekyll 处理。
+- `deploy.yml` 移除 `cp source/index.html` 和 `cp css/main.css` 覆盖步骤（不再需要）。
+- 移除 `_config.next.yml`，废弃 `index_generator.enable: false`（Fluid 需要它）。
+- `package.json`：`hexo-theme-next` → `hexo-theme-fluid`，新增 `hexo-generator-search`。
+
+### 关键配置变更速查
+
+| 变更 | 旧值 | 新值 |
+|------|------|------|
+| 主题 | `hexo-theme-next ^8.15.0` | `hexo-theme-fluid ^1.0.0` |
+| 主题配置 | `_config.next.yml` | `_config.fluid.yml` |
+| 首页 | 手写 `source/index.html` (329行) | Fluid 自动生成 |
+| 样式 | `css/main.css` (2517行) | `source/css/background.css` (5行) |
+| 背景图 | 保留 | 保留（路径 `/images/background.jpg`） |
+| 部署覆盖 | `cp source/index.html` + `cp css/main.css` | 无需覆盖 |
+
+---
+
+## 2026-06-03 (上午)
+
+### 修复自动部署 + 背景图
+
+- 将 `deploy.yml` 改为 `peaceiris/actions-gh-pages@v4`，推送到 `gh-pages` 分支，避免 Pages 源设置冲突。
+- 背景图 CSS 从绝对 URL 改为相对路径 `/image/background.jpg`。
+- 添加 workflow 步骤 `cp css/main.css public/css/main.css` 确保样式覆盖生效。
+- 添加 `.nojekyll` 防止 GitHub Pages 运行 Jekyll。
+
+### 发布第一篇科研日常博客
+
+- 手写 `2026/06/02/hello-world/index.html`。
+- 更新 `archives/index.html` 为真实文章列表。
+- 更新 `index.html` 侧边栏日志计数 0 → 3。
 
 ---
 
@@ -84,9 +118,9 @@
 | 配置项 | 文件 | 当前值 | 说明 |
 |--------|------|--------|------|
 | Pages 源 | GitHub Settings | `gh-pages` / `/(root)` | 由 Actions 自动推送 |
-| 首页生成 | `_config.yml` | `index_generator.enable: false` | 禁用以保护手写首页 |
-| 跳过渲染 | `_config.yml` | `skip_render: [index.html, GUIDE.md, GISStory/**, 2023/**]` | Hexo 原样复制 |
-| 主题 | `_config.next.yml` | `scheme: Gemini` | NexT v8.27 |
-| 协议 | `_config.next.yml` | `creative_commons.license: ''` | 必须是空字符串，不能是 `false` |
-| 自动部署 | `.github/workflows/deploy.yml` | `peaceiris/actions-gh-pages@v4` | push master → 生成 → 推送到 gh-pages |
+| 主题 | `_config.fluid.yml` | Fluid v1.x (Material Design) | 从 NexT.Gemini 迁移 |
+| 首页生成 | `_config.yml` | `index_generator` 已启用 | Fluid 自动生成首页 |
+| 跳过渲染 | `_config.yml` | `skip_render: [GUIDE.md, GISStory/**, 2023/**]` | 旧页面保持原样 |
+| 背景图 | `source/css/background.css` | `url("/images/background.jpg")` | 保留原图 |
+| 自动部署 | `.github/workflows/deploy.yml` | `peaceiris/actions-gh-pages@v4` | 无覆盖步骤 |
 | Jekyll 跳过 | `.nojekyll` | 空文件 | 防止 GitHub Pages 运行 Jekyll |

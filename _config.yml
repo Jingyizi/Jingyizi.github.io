@@ -25,7 +25,6 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-  - 'index.html'      # 手写首页，不经过 Hexo 渲染
   - 'GUIDE.md'        # 维护指南
   - 'GISStory/**'     # 旧 GIS 可视化页面
   - '2023/**'         # 旧文章页面
@@ -48,9 +47,16 @@ highlight:
 prismjs:
   enable: false
 
-# Home page setting (disabled — custom source/index.html is used instead)
+# Home page setting (Fluid 主题使用 index 布局)
 index_generator:
-  enable: false
+  per_page: 10
+  order_by: -date
+
+# Local search (for Fluid theme)
+search:
+  path: search.xml
+  field: post
+  content: true
 
 # Category & Tag
 default_category: uncategorized
@@ -66,6 +72,6 @@ per_page: 10
 pagination_dir: page
 
 # Extensions
-theme: next
+theme: fluid
 
 # Deployment (handled by GitHub Actions — see .github/workflows/deploy.yml)

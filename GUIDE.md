@@ -36,34 +36,43 @@ git push origin master
 
 ---
 
-## 修改首页
+## 修改个人信息
 
-首页文件：**`source/index.html`**
+### 首页 banner / 导航栏 / 颜色 / 页脚
 
-| 要改什么 | 改哪里 |
+编辑 **`_config.fluid.yml`**，参考 [Fluid 官方文档](https://hexo.fluid-dev.com/docs/guide/)。
+
+| 要改什么 | 配置项 |
 |---------|--------|
-| 自我介绍 | 搜索 `北京师范大学` |
-| 研究方向 | 搜索 `tag-pill` |
-| 链接 | 搜索 `fa fa-link` |
-| 头像 | 替换 `source/images/custom-logo.png` |
+| 网站标题 | `navbar.blog_title` |
+| 标语 | `index.slogan.text` |
+| 头像 | `about.avatar` |
+| 个人简介 | `about.name` + `about.intro` |
+| 社交链接 | `about.icons` |
+| 主题色 | `color.primary_color` |
+| 导航栏菜单 | `navbar.menu` |
+| 背景图 | `source/css/background.css` |
 
-改完推送：
+### 关于页面内容
 
-```bash
-git add source/index.html
-git commit -m "更新首页"
-git push origin master
-```
+编辑 **`source/about/index.md`**，支持 Markdown 和 HTML。
+
+### 背景图
+
+背景图文件：`source/images/background.jpg`（直接替换即可）
+
+背景图样式：`source/css/background.css`（只有 5 行）
 
 ---
 
-## 配置文件
+## 配置文件速查
 
 | 文件 | 作用 |
 |------|------|
-| `_config.yml` | Hexo 主配置（网站标题、URL 等） |
-| `_config.next.yml` | 主题配置（侧栏、菜单、动画等） |
+| `_config.yml` | Hexo 主配置（网站标题、URL、跳转渲染等） |
+| `_config.fluid.yml` | **★ Fluid 主题配置**（导航栏、首页、颜色、关于页、搜索、评论等） |
 | `.github/workflows/deploy.yml` | 自动部署（一般不需要改） |
+| `source/css/background.css` | 背景图样式（只有 5 行） |
 
 ---
 
@@ -71,15 +80,20 @@ git push origin master
 
 ```
 ├── source/
-│   ├── index.html          ← 首页（直接改）
-│   ├── _posts/             ← ★ 所有博客文章 .md 放这里
-│   ├── images/             ← 图片资源
-│   ├── GISStory/           ← 旧项目
-│   └── 2023/               ← 旧文章
-├── _config.yml             ← Hexo 配置
-├── _config.next.yml        ← 主题配置
-├── .github/workflows/      ← 自动部署
-└── README.md
+│   ├── _posts/              ← ★ 所有博客文章 .md 放这里
+│   ├── about/index.md        ← 关于页内容
+│   ├── archives/index.md     ← 归档页（自动生成）
+│   ├── tags/index.md         ← 标签页（自动生成）
+│   ├── categories/index.md   ← 分类页（自动生成）
+│   ├── css/background.css    ← 背景图样式（5 行）
+│   ├── images/               ← 图片资源（头像、背景图等）
+│   ├── GISStory/             ← 旧项目（保留）
+│   └── 2023/                 ← 旧文章（保留）
+├── _config.yml               ← Hexo 配置
+├── _config.fluid.yml         ← ★ Fluid 主题配置
+├── _archive/                 ← 旧 NexT 文件归档
+├── .github/workflows/        ← 自动部署
+└── CHANGELOG.md              ← 更新日志
 ```
 
 ---
@@ -90,10 +104,13 @@ git push origin master
 A: 去 `https://github.com/Jingyizi/Jingyizi.github.io/actions` 看看 workflow 是否运行成功（绿色✓）。
 
 **Q: 旧链接还能用吗？**
-A: 能。`/GISStory/hongkong.html`、`/2023/04/02/GISStory/` 等旧 URL 都保留。
-
-**Q: 首页上的文章列表在哪？**
-A: Hexo 会自动把 `source/_posts/` 下没有 `hide: true` 的文章列在首页。你的手写首页 (`source/index.html`) 会覆盖这个列表。如果你想让文章列表出现，删除 `source/index.html` 即可。
+A: 能。`/GISStory/hongkong.html`、`/2023/04/02/hello-world/` 等旧 URL 都保留。
 
 **Q: 想隐藏某篇文章？**
 A: 在文章的 frontmatter 里加上 `hide: true`。
+
+**Q: 想置顶某篇文章？**
+A: 在文章的 frontmatter 里加上 `sticky: 100`（数值越大越靠前）。
+
+**Q: 如何开启评论？**
+A: 编辑 `_config.fluid.yml`，搜索 `comments`，选择一种评论系统（如 Giscus/Waline），填写对应配置即可。
