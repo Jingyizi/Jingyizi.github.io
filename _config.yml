@@ -26,8 +26,6 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - 'GUIDE.md'        # 维护指南
-  - 'GISStory/**'     # 旧 GIS 可视化页面
-  - '2023/**'         # 旧文章页面
 
 # Writing
 new_post_name: :title.md

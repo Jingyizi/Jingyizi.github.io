@@ -61,7 +61,7 @@ git push origin master
 
 背景图文件：`source/images/background.jpg`（直接替换即可）
 
-背景图样式：`source/css/background.css`（只有 5 行）
+背景图及全站样式：`source/css/custom.css`
 
 ---
 
@@ -85,10 +85,10 @@ git push origin master
 │   ├── archives/index.md     ← 归档页（自动生成）
 │   ├── tags/index.md         ← 标签页（自动生成）
 │   ├── categories/index.md   ← 分类页（自动生成）
-│   ├── css/background.css    ← 背景图样式（5 行）
+│   ├── css/custom.css         ← 自定义样式
+│   ├── js/intro-card.js       ← 首页个人卡片
 │   ├── images/               ← 图片资源（头像、背景图等）
-│   ├── GISStory/             ← 旧项目（保留）
-│   └── 2023/                 ← 旧文章（保留）
+│   └── publications/          ← 成果页
 ├── _config.yml               ← Hexo 配置
 ├── _config.fluid.yml         ← ★ Fluid 主题配置
 ├── _archive/                 ← 旧 NexT 文件归档
@@ -102,9 +102,6 @@ git push origin master
 
 **Q: 推送后网站没变化？**
 A: 去 `https://github.com/Jingyizi/Jingyizi.github.io/actions` 看看 workflow 是否运行成功（绿色✓）。
-
-**Q: 旧链接还能用吗？**
-A: 能。`/GISStory/hongkong.html`、`/2023/04/02/hello-world/` 等旧 URL 都保留。
 
 **Q: 想隐藏某篇文章？**
 A: 在文章的 frontmatter 里加上 `hide: true`。
