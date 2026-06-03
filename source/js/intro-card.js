@@ -39,13 +39,11 @@
   // 延迟观察 — 等 DOM 可能被 JS 修改后再抓取
   function observeCards() {
     // Fluid 可能用不同 class 渲染文章卡片
+    // （intro-card 有自己的 CSS card-rise 动画，不在此观察以免重复）
     var cards = document.querySelectorAll('.index-card, .post-card, .article-card, #board article, .post-list .post');
     cards.forEach(function (card) {
       observer.observe(card);
     });
-    // 也观察简介卡片
-    var intro = document.querySelector('.intro-card-wrapper');
-    if (intro) observer.observe(intro);
   }
 
   // 初次观察
@@ -88,7 +86,7 @@
       '</div>';
 
     content.insertBefore(card, content.firstChild);
-    observer.observe(card);
+    // intro-card 由 CSS card-rise 动画驱动，不再用 IntersectionObserver
   }
 
   if (document.readyState === 'loading') {

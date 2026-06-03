@@ -105,10 +105,7 @@ body {
   letter-spacing: 3px;
   animation: fadeInDown 0.8s ease-out;
 }
-.banner-text .subtitle,
-.banner-text p {
-  animation: fadeInUp 0.8s ease-out 0.2s both;
-}
+/* 副标题由 Fluid typing.js 打字机驱动，不再加 CSS 动画以免冲突 */
 
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
@@ -117,6 +114,25 @@ body {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ----- 文章页 Banner 标题 — 大字居中 + 灵动入场 ----- */
+.post .banner-text h1,
+.page:not(.index) .banner-text h1 {
+  font-size: 2.4rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px;
+  text-align: center;
+  animation: fadeInDown 0.7s ease-out;
+}
+
+/* 文章页 Banner 副标题 / 元信息 */
+.post .banner-text .post-meta,
+.page:not(.index) .banner-text .post-meta {
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  animation: fadeInUp 0.7s ease-out 0.15s both;
 }
 
 /* ------------------------------------------
