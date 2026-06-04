@@ -332,22 +332,70 @@ footer {
 footer a { color: #4c6cb3 !important; }
 
 /* ------------------------------------------
-   9. 侧边 TOC — 目录导航增强
+   9. 侧边 TOC — 完整修复
+   Fluid 默认将 TOC 包在 d-none d-xl-block 列中（仅 ≥1200px 可见），
+   且 sticky 定位容易被 #board 的 z-index 覆盖。以下彻底修复。
    ------------------------------------------ */
-/* TOC 容器 — Fluid 使用 #toc 作为 tocbot 挂载点 */
+
+/* 9.1 强制 TOC 父容器在 lg+ (≥992px) 屏幕可见 */
+/* 使用 :has() 选择器精准定位包含 #toc 的隐藏列 */
+@media (min-width: 992px) {
+  .d-none:has(#toc),
+  .d-xl-block.d-none:has(#toc) {
+    display: block !important;
+  }
+}
+/* 兼容不支持 :has() 的旧浏览器：直接让 toc-widget 显形 */
+@supports not (selector(:has(*))) {
+  @media (min-width: 992px) {
+    .toc-widget {
+      display: block !important;
+      position: fixed !important;
+      right: max(16px, calc((100vw - 1100px) / 2 - 200px));
+      top: 80px;
+      width: 200px;
+      z-index: 100 !important;
+    }
+  }
+}
+
+/* 9.2 侧边栏 sticky 定位 + 尺寸控制 */
+@media (min-width: 992px) {
+  .toc-widget,
+  #toc {
+    position: sticky;
+    top: 80px;
+    align-self: flex-start;
+  }
+  .toc-widget {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+/* 9.3 TOC 容器 — Fluid 使用 #toc 作为 tocbot 挂载点 */
 #toc {
   background: rgba(255, 255, 255, 0.92) !important;
   border-radius: 10px;
   padding: 1rem 0.8rem !important;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 120px);
   overflow-y: auto;
   font-size: 0.88rem;
   z-index: 10 !important;
   position: relative;
 }
+/* 移动端 TOC 不作为侧边栏，改为隐藏在文章内 */
+@media (max-width: 991px) {
+  #toc {
+    position: relative !important;
+    top: auto !important;
+    max-height: 50vh;
+    margin: 1rem 0;
+  }
+}
 
-/* TOC 列表项 */
+/* 9.4 TOC 列表项 */
 #toc .toc {
   list-style: none;
   padding-left: 0;
@@ -376,7 +424,7 @@ footer a { color: #4c6cb3 !important; }
   border-left-color: #4c6cb3;
 }
 
-/* TOC 当前激活项 — 跟随滚动高亮 */
+/* 9.5 TOC 当前激活项 — 跟随滚动高亮 */
 #toc .toc-link.is-active-link,
 #toc .toc-link.active {
   color: #4c6cb3 !important;
@@ -385,14 +433,14 @@ footer a { color: #4c6cb3 !important; }
   font-weight: 600 !important;
 }
 
-/* TOC 子级缩进 */
+/* 9.6 TOC 子级缩进 */
 #toc .toc-child {
   list-style: none;
   padding-left: 1.2rem;
   margin: 0;
 }
 
-/* TOC 移动端折叠按钮 */
+/* 9.7 移动端 TOC 浮动按钮 */
 .toc-toggle-btn {
   position: fixed;
   right: 16px;
@@ -416,10 +464,68 @@ footer a { color: #4c6cb3 !important; }
   transform: scale(1.08);
   box-shadow: 0 4px 16px rgba(76, 108, 179, 0.4);
 }
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .toc-toggle-btn {
     display: flex;
   }
+}
+
+/* 9.8 移动端 TOC 弹出面板 */
+.toc-mobile-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.toc-mobile-panel.open {
+  transform: translateX(0);
+}
+.toc-mobile-panel .toc-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eef1f6;
+}
+.toc-mobile-panel .toc-panel-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+.toc-mobile-panel .toc-panel-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.toc-mobile-panel .toc-panel-close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+.toc-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.toc-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ------------------------------------------

@@ -80,6 +80,7 @@ git push origin master
 | `source/css/custom.css` | 全站自定义样式（banner、卡片、TOC、标签、成果页等） |
 | `source/js/intro-card.js` | 首页个人介绍卡片 + 导航栏滚动效果 |
 | `source/js/banner-contrast.js` | 封面图明暗自动检测，文字对比色切换 |
+| `source/js/toc-enhance.js` | TOC 侧边栏增强：打破大屏限制、移动端面板、滚动同步 |
 
 ---
 
@@ -95,7 +96,8 @@ git push origin master
 │   ├── css/custom.css         ← 自定义样式
 │   ├── js/
 │   │   ├── intro-card.js       ← 首页个人卡片 + 导航栏效果
-│   │   └── banner-contrast.js  ← 封面图对比度自动检测
+│   │   ├── banner-contrast.js  ← 封面图对比度自动检测
+│   │   └── toc-enhance.js      ← TOC 侧边栏增强
 │   ├── images/               ← 图片资源（头像、背景图、封面图等）
 │   └── publications/          ← 成果页
 ├── _config.yml               ← Hexo 配置
