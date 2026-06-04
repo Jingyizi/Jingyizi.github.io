@@ -1,8 +1,8 @@
 ---
-title: 《Addressing Global Hotspots of Drought-Related Crop Production Losses》论文精读
-date: 2026-06-02 18:00:00
+title: 全球干旱对作物影响的热点以及该如何解决？
+date: 2026-06-04 12:00:00
 tags:
-  - AI辅助论文精读
+  - 论文精读
 categories:
   - 科研日常
 ---
@@ -14,7 +14,7 @@ categories:
 
 ## 术语表 / Terminology Ledger
 
-| Canonical term | 中文翻译 | First-use definition |
+| 规范术语 | 中文翻译 | 首次定义 |
 |---|---|---|
 | Drought Sensitivity (DS) | 干旱敏感性 | 作物产量对由气候变率驱动的水分异常（ETₐ 降至第10百分位）的响应程度，以中位产量百分比损失衡量 |
 | Actual Evapotranspiration (ETₐ) | 实际蒸散发 | 作物在整个生长季通过蒸散发实际消耗的水量 (mm·day⁻¹) |
