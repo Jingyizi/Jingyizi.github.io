@@ -129,7 +129,7 @@
     var content = document.querySelector('.post-content, .markdown-body, article');
     if (!content) return false;
 
-    var headings = content.querySelectorAll('h1, h2, h3, h4');
+    var headings = content.querySelectorAll('h2, h3, h4');
     if (headings.length === 0) return false;
 
     var topLevel = document.createElement('ol');
