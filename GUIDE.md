@@ -17,12 +17,15 @@ tags:
   - 遥感
 categories:
   - 科研日常
+banner_img: /images/your-cover.jpg   # 可选：自定义封面图，不填则用全局默认图
 ---
 
 ## 正文标题
 
 在这里写正文……
 ```
+
+> **自定义封面图**：将图片放到 `source/images/` 下，在 frontmatter 中加入 `banner_img: /images/xxx.jpg`。站点会自动分析封面图的明暗，深色图用白字、浅色图用深色字，确保标题始终清晰可读。不填则使用全局默认封面。
 
 ### 3. 推送
 
@@ -51,17 +54,19 @@ git push origin master
 | 社交链接 | `about.icons` |
 | 主题色 | `color.primary_color` |
 | 导航栏菜单 | `navbar.menu` |
-| 背景图 | `source/css/background.css` |
+| 背景图 | `source/images/background.jpg`（直接替换即可） |
 
 ### 关于页面内容
 
 编辑 **`source/about/index.md`**，支持 Markdown 和 HTML。
 
-### 背景图
+### 自定义样式
 
-背景图文件：`source/images/background.jpg`（直接替换即可）
+全站样式：`source/css/custom.css`
 
-背景图及全站样式：`source/css/custom.css`
+首页/导航栏动态效果：`source/js/intro-card.js`
+
+封面图对比度检测：`source/js/banner-contrast.js`
 
 ---
 
@@ -72,7 +77,9 @@ git push origin master
 | `_config.yml` | Hexo 主配置（网站标题、URL、跳转渲染等） |
 | `_config.fluid.yml` | **★ Fluid 主题配置**（导航栏、首页、颜色、关于页、搜索、评论等） |
 | `.github/workflows/deploy.yml` | 自动部署（一般不需要改） |
-| `source/css/background.css` | 背景图样式（只有 5 行） |
+| `source/css/custom.css` | 全站自定义样式（banner、卡片、TOC、标签、成果页等） |
+| `source/js/intro-card.js` | 首页个人介绍卡片 + 导航栏滚动效果 |
+| `source/js/banner-contrast.js` | 封面图明暗自动检测，文字对比色切换 |
 
 ---
 
@@ -86,8 +93,10 @@ git push origin master
 │   ├── tags/index.md         ← 标签页（自动生成）
 │   ├── categories/index.md   ← 分类页（自动生成）
 │   ├── css/custom.css         ← 自定义样式
-│   ├── js/intro-card.js       ← 首页个人卡片
-│   ├── images/               ← 图片资源（头像、背景图等）
+│   ├── js/
+│   │   ├── intro-card.js       ← 首页个人卡片 + 导航栏效果
+│   │   └── banner-contrast.js  ← 封面图对比度自动检测
+│   ├── images/               ← 图片资源（头像、背景图、封面图等）
 │   └── publications/          ← 成果页
 ├── _config.yml               ← Hexo 配置
 ├── _config.fluid.yml         ← ★ Fluid 主题配置
@@ -108,6 +117,9 @@ A: 在文章的 frontmatter 里加上 `hide: true`。
 
 **Q: 想置顶某篇文章？**
 A: 在文章的 frontmatter 里加上 `sticky: 100`（数值越大越靠前）。
+
+**Q: 如何给文章设置自定义封面图？**
+A: 把图片放到 `source/images/` 下，在文章 frontmatter 中加入 `banner_img: /images/xxx.jpg`。站点会自动分析封面明暗，切换标题文字颜色。
 
 **Q: 如何开启评论？**
 A: 编辑 `_config.fluid.yml`，搜索 `comments`，选择一种评论系统（如 Giscus/Waline），填写对应配置即可。
