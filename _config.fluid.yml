@@ -13,9 +13,10 @@ apple_touch_icon: /images/custom-logo.png
 custom_css:
   - /css/custom.css
 
-# 自定义 JS（首页个人卡片注入）
+# 自定义 JS（首页个人卡片注入 + banner 对比度检测）
 custom_js:
   - /js/intro-card.js
+  - /js/banner-contrast.js
 
 # 懒加载
 lazyload:

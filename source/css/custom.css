@@ -61,6 +61,40 @@ body {
   letter-spacing: 1px;
 }
 
+/* ----- Banner 文字对比度增强 ----- */
+/* 为所有 banner 文字添加智能 text-shadow，确保在各种背景图上清晰可读 */
+.banner-text,
+.banner-text h1,
+.banner-text .h2,
+.banner-text #subtitle,
+.banner-text .fade-in-up {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6),
+               0 0 24px rgba(0, 0, 0, 0.3),
+               0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 浅色背景时 JS 动态切换为深色投影 */
+.banner-light-text .banner-text,
+.banner-light-text .banner-text h1,
+.banner-light-text .banner-text .h2,
+.banner-light-text .banner-text #subtitle {
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.6),
+               0 0 24px rgba(255, 255, 255, 0.3),
+               0 2px 4px rgba(255, 255, 255, 0.5) !important;
+  color: #1a1a2e !important;
+}
+
+/* 深色背景时文字纯白 + 深色投影（默认）*/
+.banner-dark-text .banner-text,
+.banner-dark-text .banner-text h1,
+.banner-dark-text .banner-text .h2,
+.banner-dark-text .banner-text #subtitle {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7),
+               0 0 24px rgba(0, 0, 0, 0.4),
+               0 2px 4px rgba(0, 0, 0, 0.6) !important;
+  color: #fff !important;
+}
+
 /* Fluid 自带下翻箭头 — 增强弹跳效果 */
 .scroll-down-bar {
   animation: arrow-bounce 2s ease-in-out infinite;
@@ -298,13 +332,94 @@ footer {
 footer a { color: #4c6cb3 !important; }
 
 /* ------------------------------------------
-   9. 侧边 TOC
+   9. 侧边 TOC — 目录导航增强
    ------------------------------------------ */
+/* TOC 容器 — Fluid 使用 #toc 作为 tocbot 挂载点 */
 #toc {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92) !important;
   border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1rem 0.8rem !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  font-size: 0.88rem;
+  z-index: 10 !important;
+  position: relative;
+}
+
+/* TOC 列表项 */
+#toc .toc {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+#toc .toc-item {
+  margin: 2px 0;
+}
+#toc .toc-link {
+  display: block;
+  color: #5a6d80 !important;
+  text-decoration: none !important;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#toc .toc-link:hover {
+  color: #4c6cb3 !important;
+  background: rgba(76, 108, 179, 0.06);
+  border-left-color: #4c6cb3;
+}
+
+/* TOC 当前激活项 — 跟随滚动高亮 */
+#toc .toc-link.is-active-link,
+#toc .toc-link.active {
+  color: #4c6cb3 !important;
+  background: rgba(76, 108, 179, 0.1) !important;
+  border-left-color: #4c6cb3 !important;
+  font-weight: 600 !important;
+}
+
+/* TOC 子级缩进 */
+#toc .toc-child {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+/* TOC 移动端折叠按钮 */
+.toc-toggle-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 80px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #4c6cb3;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 12px rgba(76, 108, 179, 0.3);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.toc-toggle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(76, 108, 179, 0.4);
+}
+@media (max-width: 768px) {
+  .toc-toggle-btn {
+    display: flex;
+  }
 }
 
 /* ------------------------------------------
@@ -375,7 +490,58 @@ footer a { color: #4c6cb3 !important; }
 }
 
 /* ------------------------------------------
-   12. 响应式
+   12. 标签页 — 标签云/列表增强可读性
+   ------------------------------------------ */
+/* 标签页容器 */
+.tagcloud,
+.tag-list {
+  padding: 0;
+  margin: 1rem 0;
+}
+/* 标签页单个标签链接 */
+.tagcloud a,
+.tag-list .tag-list-item a,
+.tag-list-item a {
+  display: inline-block !important;
+  background: #e8ecf4 !important;
+  color: #3c4d6b !important;
+  padding: 6px 16px !important;
+  border-radius: 18px !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  margin: 5px 6px !important;
+  transition: all 0.25s ease !important;
+  border: 1px solid rgba(76, 108, 179, 0.15) !important;
+}
+.tagcloud a:hover,
+.tag-list .tag-list-item a:hover,
+.tag-list-item a:hover {
+  background: #4c6cb3 !important;
+  color: #fff !important;
+  border-color: #4c6cb3 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 108, 179, 0.25);
+}
+
+/* 标签页标题/页头 */
+.tag-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+/* 标签计数徽标 */
+.tagcloud a .tag-count,
+.tag-list-item .tag-count {
+  color: #8898b0;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+/* ------------------------------------------
+   13. 响应式
    ------------------------------------------ */
 @media (max-width: 768px) {
   .banner-text .h2 { font-size: 1.3rem; }
