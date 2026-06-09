@@ -5,7 +5,7 @@ tags:
   - 论文精读
 categories:
   - 科研日常
-banner_img: /images/sm-vpd.png
+banner_img: sm-vpd.png
 ---
 
 # Soil moisture dominates dryness stress on ecosystem production globally
@@ -47,7 +47,7 @@ banner_img: /images/sm-vpd.png
 - 在年尺度上，SM与VPD呈强负相关（低SM总是伴随高VPD）
 - 这种耦合使得无论是单独使用SM还是VPD作为干燥胁迫指标，都会在全球尺度上呈现与SIF（日光诱导叶绿素荧光，GPP的代理指标）相似的相关性（图1d, R²=0.69）
 - **关键混淆因素（confounding factor）：** SM与VPD之间的相关性使得评估它们各自对生态系统生产的影响变得极为困难
-![土壤水分与蒸气压力缺口的强烈耦合会干扰生态系统干燥压力](/images/sm-vpd.png)
+![土壤水分与蒸气压力缺口的强烈耦合会干扰生态系统干燥压力](sm-vpd.png)
 > **图1解析（Fig. 1, p.3）：SM与VPD的强耦合混淆了生态系统干燥胁迫信号。** (a) SIF与SM的年尺度相关系数r(SIF, SM)空间分布；(b) SIF与VPD的年尺度相关系数r(SIF, VPD)空间分布；(c) SM与VPD的年尺度相关系数r(SM, VPD)空间分布——显示全球大范围强负相关；(d) 年尺度r(SIF, VPD)与r(SIF, SM)的关系散点图，R²高达0.69，说明因SM-VPD耦合，两者与SIF的相关性高度一致，无法区分。
 
 ---
@@ -94,14 +94,14 @@ banner_img: /images/sm-vpd.png
 **Step 4 — 效应量化：**
 - **VPD限制效应** SIF(VPD\|SM)：在每个SM分箱内，从低VPD到高VPD的SIF变化（消除SM耦合后）
 - **SM限制效应** SIF(SM\|VPD)：在每个VPD分箱内，从高SM到低SM的SIF变化（消除VPD耦合后）
-![SM与VPD的解耦](/images/decoupling-sm-vpd.png)
+![SM与VPD的解耦](decoupling-sm-vpd.png)
 > **图2解析（Fig. 2, p.3）：SM与VPD的解耦策略。** (a) 日尺度SM与VPD的相关系数空间分布——仍显示大范围强负相关；(b) 在SM分箱内进行平均后的相关系数——相关性消失（近似为零）；(c) 在VPD分箱内进行平均后的相关系数——同样近似为零；(d) 小提琴图展示了从年尺度到日尺度分箱后SM-VPD相关系数的变化：年/月/周/日尺度上相关系数中位数均>0.5，但在SM分箱和VPD分箱内降至接近零。**这一结果构成了整个研究的方法论基础。**
 
 **Step 5 — 效应比较（图3 Mali示例）：** 以一个位于西非马里的像素为例，展示了完整分析流程——在SM分箱内，高VPD非但未降低SIF，反而在中等SM条件下略微增加SIF；而在VPD分箱内，低SM显著降低了SIF。由此定量比较两种效应的大小。
-![解开SM和VPD的限制效应 — Mali案例](/images/mali-case-study.png)
+![解开SM和VPD的限制效应 — Mali案例](mali-case-study.png)
 > **图3解析（Fig. 3, p.4）：分离SM与VPD限制效应的示例。** (a) 日SIF vs. 日VPD原始散点图——无法判断因果关系；(b) 日SIF vs. 日SM原始散点图；(c) 按SM分箱后SIF vs. VPD——每条彩色线代表一个固定SM分箱内的SIF-VPD关系，可见高VPD并未降低SIF；(d) 按VPD分箱后SIF vs. SM——低SM明显降低SIF；(e) SM-VPD百分位空间中的SIF平均值，青色箭头代表VPD限制效应SIF(VPD\|SM)，橙色箭头代表SM限制效应SIF(SM\|VPD)；(f) 两种效应的箱线图分布——SM效应(−0.17)远大于VPD效应(−0.03)。
 
-![研究方法的完整流程图示](/images/method-flowchart.png)
+![研究方法的完整流程图示](method-flowchart.png)
 
 ---
 
@@ -114,7 +114,7 @@ banner_img: /images/sm-vpd.png
 - 量化结果：从最湿SM到最干SM（消除VPD耦合后），SIF平均减少**14.9%**；而从最低VPD到最高VPD（消除SM耦合后），SIF平均仅减少**3.8%**
 - 高SM效应集中在中纬度地区：北美南部、欧亚大陆中部、南部非洲、澳大利亚
 - **关键推论：** 许多先前对VPD在生态系统生产中作用的估计可能被**夸大**了[16,24]，因为它们未考虑SM-VPD强耦合这一混淆因素
-![全球SM和VPD对生态系统生产的影响](/images/global-sm-vpd-effects.png)
+![全球SM和VPD对生态系统生产的影响](global-sm-vpd-effects.png)
 > **图4解析（Fig. 4, p.5）：全球SM与VPD对生态系统生产的影响。** (a, b) SIF(SM\|VPD)的空间分布及纬向平均——显示中纬度大范围负值，表明低SM限制SIF；(c, d) SIF(VPD\|SM)的空间分布及纬向平均——大部分区域接近零，仅在赤道非洲有正值；(e, f) \|SIF(SM\|VPD)\| − \|SIF(VPD\|SM)\|的空间分布及纬向平均——正值（红色）占优势，表明SM效应普遍强于VPD效应。
 
 ### 发现2：VPD效应在热带和北方高纬度地区消失（图4c-d）
@@ -129,7 +129,7 @@ banner_img: /images/sm-vpd.png
 - 这些半干旱生态系统恰恰是**全球陆地CO₂通量年际变异的主要驱动力**
 - 树木覆盖度越低的区域，对SM胁迫的响应越大（图5b）
 - **深远推论：** 随着气候变化驱动的旱地扩张（dryland expansion），SM对未来全球碳循环的影响可能将进一步增强
-![SM干燥胁迫对气候和植被梯度的依赖性](/images/aridity-vegetation-gradient.png)
+![SM干燥胁迫对气候和植被梯度的依赖性](aridity-vegetation-gradient.png)
 > **图5解析（Fig. 5, p.6）：SM干燥胁迫对气候和植被梯度的依赖性。** (a) SM限制效应SIF(SM\|VPD)沿干旱指数（aridity）梯度的小提琴图——在半干旱区间（0.2–0.5）效应最强；(b) 沿树木覆盖度梯度的小提琴图——非森林/低树木覆盖度区域SM胁迫效应更大；(c) 不同植物功能型（PFT）内SIF对SM的标准化敏感性（∂SIF/∂SM\|VPD）——**同一PFT内部敏感性差异巨大**，表明仅按PFT参数化干燥胁迫的模型方案存在严重不足。SAV=稀树草原, GRA=草地, CRO=农田, WSA(S)=木本稀树草原(45°N以南), SHR(S)=灌丛(45°N以南)。
 
 ### 发现4：同种植被功能型的干燥胁迫敏感性差异巨大（图5c）
