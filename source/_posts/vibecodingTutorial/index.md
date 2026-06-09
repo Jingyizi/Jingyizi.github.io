@@ -83,13 +83,17 @@ Claude Code 是 Anthropic 推出的 AI 编程助手，它能够像一个经验�
 
 ## 五、配置步骤
 
-### 5.1 安装 CCSwitch
+### 5.1 安装 Claude Code
+
+上面提到 Claude Code 有三种打开方式：Terminal、VS Code 插件、Desktop 客户端，其相应的安装方式也不同。在 [Anthropic 官网](https://claude.com/product/claude-code) 上均有详细教程，在此不再赘述。
+
+### 5.2 安装 CCSwitch
 
 社区大佬们开发了一个利器 —— **CCSwitch**，可以一键切换 Claude Code / Codex 的底层模型，省去手动改配置的麻烦。
 
 > 📦 下载链接：[CCSwitch 网盘分享](https://pan.bnu.edu.cn/l/u1pBvE)
 
-### 5.2 配置 DeepSeek 模型
+### 5.3 配置 DeepSeek 模型
 
 安装完成后，打开 CCSwitch 进行如下操作：
 
@@ -118,7 +122,7 @@ Claude Code 是 Anthropic 推出的 AI 编程助手，它能够像一个经验�
 
 ![选择模型版本](image-2.png)
 
-### 5.3 配置完成
+### 5.4 配置完成
 
 配置成功后，你的终端界面（以 VS Code 插件为例）应该类似下图：
 
