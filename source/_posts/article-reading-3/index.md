@@ -1,3 +1,13 @@
+---
+title: 多指标评估揭示复合干热事件对全球小麦产量的日益加剧影响
+date: 2026-06-16 17:00:00
+tags:
+  - 论文精读
+categories:
+  - 科研日常
+---
+
+
 # Multi-Indicator Assessment to Assess the Increasing Impacts of Compound Dry and Hot Events on Global Wheat Yield
 
 ## 多指标评估揭示复合干热事件对全球小麦产量的日益加剧影响
