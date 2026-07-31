@@ -1,0 +1,1256 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/custom-logo.png">
+  <link rel="icon" href="/images/custom-logo.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="靖翼子">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="《Addressing Global Hotspots of Drought-Related Crop Production Losses》 论文精读 Tuninetti, M. &amp; Davis, K.F. (2026). Nature Communications. https:&#x2F;&#x2F;doi.org&#x2F;10.1038&#x2F;s41467-026-72715-y   术语表 &#x2F; Terminolog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全球干旱对作物影响的热点以及该如何解决？">
+<meta property="og:url" content="https://jingyizi.github.io/2026/06/04/article-reading/index/index.html">
+<meta property="og:site_name" content="靖翼之憩">
+<meta property="og:description" content="《Addressing Global Hotspots of Drought-Related Crop Production Losses》 论文精读 Tuninetti, M. &amp; Davis, K.F. (2026). Nature Communications. https:&#x2F;&#x2F;doi.org&#x2F;10.1038&#x2F;s41467-026-72715-y   术语表 &#x2F; Terminolog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jingyizi.github.io/2026/06/04/article-reading/index/drought-sensitivity-hotspots.png">
+<meta property="article:published_time" content="2026-06-04T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-31T03:51:52.654Z">
+<meta property="article:author" content="靖翼子">
+<meta property="article:tag" content="论文精读">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jingyizi.github.io/2026/06/04/article-reading/index/drought-sensitivity-hotspots.png">
+  
+  
+  
+  <title>全球干旱对作物影响的热点以及该如何解决？ - 靖翼之憩</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"jingyizi.github.io","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":"subtitle"},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h2,h3,h4","collapseDepth":0,"collapse":false},"lazyload":{"enable":true,"loading_img":"/images/custom-logo.png","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 50vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>靖翼之憩</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/publications/" target="_self">
+                <i class="iconfont icon-category"></i>
+                <span>成果</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/publications/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category"></i>
+                  <span>成果</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>关于</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/2026/06/04/article-reading/index/drought-sensitivity-hotspots.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">全球干旱对作物影响的热点以及该如何解决？</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-04 12:00" pubdate>
+          2026-06-04
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">全球干旱对作物影响的热点以及该如何解决？</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="《Addressing-Global-Hotspots-of-Drought-Related-Crop-Production-Losses》-论文精读"><a href="#《Addressing-Global-Hotspots-of-Drought-Related-Crop-Production-Losses》-论文精读" class="headerlink" title="《Addressing Global Hotspots of Drought-Related Crop Production Losses》 论文精读"></a>《Addressing Global Hotspots of Drought-Related Crop Production Losses》 论文精读</h1><blockquote>
+<p><strong>Tuninetti, M. &amp; Davis, K.F.</strong> (2026). <em>Nature Communications</em>. <a target="_blank" rel="noopener" href="https://doi.org/10.1038/s41467-026-72715-y">https://doi.org/10.1038/s41467-026-72715-y</a></p>
+</blockquote>
+<hr>
+<h2 id="术语表-Terminology-Ledger"><a href="#术语表-Terminology-Ledger" class="headerlink" title="术语表 / Terminology Ledger"></a>术语表 / Terminology Ledger</h2><table>
+<thead>
+<tr>
+<th>规范术语</th>
+<th>中文翻译</th>
+<th>首次定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Drought Sensitivity (DS)</td>
+<td>干旱敏感性</td>
+<td>作物产量对由气候变率驱动的水分异常（ETₐ 降至第10百分位）的响应程度，以中位产量百分比损失衡量</td>
+</tr>
+<tr>
+<td>Actual Evapotranspiration (ETₐ)</td>
+<td>实际蒸散发</td>
+<td>作物在整个生长季通过蒸散发实际消耗的水量 (mm·day⁻¹)</td>
+</tr>
+<tr>
+<td>Reference Evapotranspiration (ET₀)</td>
+<td>参考蒸散发</td>
+<td>标准化参考作物表面的蒸散发量，代表大气蒸发需求</td>
+</tr>
+<tr>
+<td>Water Production Function</td>
+<td>水分生产函数</td>
+<td>将产量变化与实际蒸散发变化联系起来的经验关系 (ET–Y relationship)</td>
+</tr>
+<tr>
+<td>Yield Response Factor (k_y)</td>
+<td>产量响应系数</td>
+<td>表征作物对水分亏缺条件的敏感性系数</td>
+</tr>
+<tr>
+<td>Monsoon Cereals</td>
+<td>季风谷物</td>
+<td>玉米(maize)、小米(millet)、水稻(rice)、高粱(sorghum)</td>
+</tr>
+<tr>
+<td>WaterCROP Model</td>
+<td>WaterCROP 模型</td>
+<td>本文开发的基于日尺度土壤水平衡的网格化作物实际蒸散发估算模型</td>
+</tr>
+<tr>
+<td>TAWC</td>
+<td>总有效含水量</td>
+<td>Total Available Water Content — 土壤中可供作物利用的总水量</td>
+</tr>
+<tr>
+<td>RAWC</td>
+<td>易效含水量</td>
+<td>Readily Available Water Content — 作物根系层中可实际利用的水分部分</td>
+</tr>
+<tr>
+<td>Physical Water Scarcity</td>
+<td>物理性水资源短缺</td>
+<td>可再生淡水不足以满足灌溉需求的情况</td>
+</tr>
+<tr>
+<td>Economic Water Scarcity</td>
+<td>经济性水资源短缺</td>
+<td>水资源物理上充足但缺乏灌溉基础设施的情况</td>
+</tr>
+<tr>
+<td>MAPSPAM</td>
+<td>—</td>
+<td>空间分配的全球作物生产统计数据 (IFPRI, 2010)</td>
+</tr>
+<tr>
+<td>CRU TS</td>
+<td>—</td>
+<td>Climatic Research Unit Time Series 气候数据集 (v4.03)</td>
+</tr>
+<tr>
+<td>HWSD</td>
+<td>—</td>
+<td>Harmonized World Soil Database 土壤数据库</td>
+</tr>
+<tr>
+<td>LPJmL</td>
+<td>—</td>
+<td>动态全球植被和作物模型</td>
+</tr>
+<tr>
+<td>FAOSTAT</td>
+<td>—</td>
+<td>联合国粮农组织统计数据库</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="一、研究背景"><a href="#一、研究背景" class="headerlink" title="一、研究背景"></a>一、研究背景</h2><h3 id="1-1-全球粮食系统的核心矛盾"><a href="#1-1-全球粮食系统的核心矛盾" class="headerlink" title="1.1 全球粮食系统的核心矛盾"></a>1.1 全球粮食系统的核心矛盾</h3><p>自1960年代以来，全球粮食供应增长了两倍 (Pingali, 2012)，但这一成就是建立在<strong>极其狭窄的作物基础</strong>之上的——水稻、玉米、小麦等少数几种大宗作物贡献了大部分产出。这导致：</p>
+<ul>
+<li><strong>作物生产结构趋于同质化</strong> (Khoury et al., 2014)：主食作物种类减少，更有营养的谷物被高产量但气候韧性较低的作物组合所替代；</li>
+<li><strong>气候变化和极端事件的压力日益增大</strong>：气候变率已能解释全球主要作物三分之一以上的产量波动 (Ray et al., 2015)，而极端事件 (干旱、热浪、洪水) 进一步加剧了产量不稳定 (Vogel et al., 2019)；</li>
+<li><strong>预计未来气候变率将进一步增加</strong> (Bathiany et al., 2018)，因此提高作物生产的<strong>气候韧性 (climate resilience)</strong> 成为适应战略的核心。</li>
+</ul>
+<h3 id="1-2-已有研究的不足-Knowledge-Gap"><a href="#1-2-已有研究的不足-Knowledge-Gap" class="headerlink" title="1.2 已有研究的不足 (Knowledge Gap)"></a>1.2 已有研究的不足 (Knowledge Gap)</h3><p>尽管大量研究关注了气候对少数几种大宗作物 (玉米、水稻、大豆、小麦) 的影响，但存在以下局限：</p>
+<ol>
+<li><strong>作物覆盖不全</strong>：大多数研究仅关注”四大作物”，缺乏对更广泛作物篮子 (17种及以上) 的系统评估；</li>
+<li><strong>空间分辨率粗糙</strong>：现有研究多在国家和亚国家尺度开展，难以精确识别热点区域；</li>
+<li><strong>方法学局限</strong>：主要依赖基于历史农业统计的统计方法，缺乏将特定作物生理参数与气候水文过程耦合的机制性分析；</li>
+<li><strong>干旱指数不针对作物</strong>：现有干旱指数 (PDSI、SPI、CMI等) 并非针对特定作物的敏感性定制。</li>
+</ol>
+<blockquote>
+<p><strong>本文定位</strong>：填补这一关键知识空白——在全球精细空间分辨率上，系统量化 17 种主要作物<strong>整个生产篮子</strong>的干旱敏感性 (DS)，并评估两种干预策略 (可持续灌溉扩展 + 作物转换) 的潜力。</p>
+</blockquote>
+<hr>
+<h2 id="二、关键科学问题"><a href="#二、关键科学问题" class="headerlink" title="二、关键科学问题"></a>二、关键科学问题</h2><p>本文试图回答以下核心科学问题：</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>关键科学问题</th>
+<th>对应分析</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Q1</td>
+<td>全球17种主要作物的干旱敏感性 (DS) 在 <strong>空间上</strong> 如何分布？哪些地区和作物构成 “热点”？</td>
+<td>第1部分：Rainfed DS 全球网格化估算与热点制图</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>在当前气候变率下，干旱相关的<strong>产量损失</strong>全球规模有多大？相当于多少热量损失？</td>
+<td>第1部分：全球损失估计 (10.1% rainfed, 6.8% irrigated)</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>在<strong>水资源可持续约束下</strong>，灌溉扩展到雨养农田可在多大程度上减少气候相关产量损失？</td>
+<td>第2部分：可持续灌溉扩展潜力评估</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>在水资源无法支持灌溉扩展的地区，<strong>作物转换 (crop switching)</strong> 是否可作为替代适应策略？</td>
+<td>第3部分：配对比较与像素级作物转换评估</td>
+</tr>
+<tr>
+<td>Q5</td>
+<td><strong>整合两种策略</strong> (灌溉扩展 + 作物转换) 可产生怎样的协同效益？</td>
+<td>第4部分：综合解决方案评估</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="三、使用的数据和方法"><a href="#三、使用的数据和方法" class="headerlink" title="三、使用的数据和方法"></a>三、使用的数据和方法</h2><h3 id="3-1-数据源"><a href="#3-1-数据源" class="headerlink" title="3.1 数据源"></a>3.1 数据源</h3><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>来源</th>
+<th>时空分辨率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>月降水和潜在蒸散发 (1961–2018)</td>
+<td>CRU TS v4.03 (Harris et al., 2020)</td>
+<td>30 arcminute → 重采样至 5 arcminute</td>
+</tr>
+<tr>
+<td>土壤有效含水量</td>
+<td>HWSD (FAO/IIASA, 2012)</td>
+<td>0.5 arcminute</td>
+</tr>
+<tr>
+<td>种植日期和生长季时长</td>
+<td>Portmann et al. (2010) — MIRCA2000</td>
+<td>5 arcminute</td>
+</tr>
+<tr>
+<td>作物收获面积和产量 (2010)</td>
+<td>IFPRI MAPSPAM v2.0</td>
+<td>5 arcminute (~10 km at equator)</td>
+</tr>
+<tr>
+<td>作物系数 (k_c) 和产量响应系数 (k_y)</td>
+<td>FAO56 (Allen et al., 1998); Doorenbos &amp; Kassam (1979); Pereira et al. (2021); Minhas et al. (2020)</td>
+<td>按气候区域和生长阶段分</td>
+</tr>
+<tr>
+<td>物理/经济水资源短缺图</td>
+<td>Rosa et al. (2020)</td>
+<td>5 arcminute</td>
+</tr>
+<tr>
+<td>热量含量</td>
+<td>各类文献 (Table S4)</td>
+<td>kcal/ton</td>
+</tr>
+</tbody></table>
+<p>**研究作物 (17种)**：大麦、木薯、棉花、花生、玉米、小米、油棕、马铃薯、油菜籽、水稻、高粱、大豆、甜菜、甘蔗、甘薯、小麦、山药 — 合计占全球初级作物产量的 **75%**。</p>
+<h3 id="3-2-核心方法框架-—-WaterCROP-模型"><a href="#3-2-核心方法框架-—-WaterCROP-模型" class="headerlink" title="3.2 核心方法框架 — WaterCROP 模型"></a>3.2 核心方法框架 — WaterCROP 模型</h3><h4 id="Step-1-计算每日实际蒸散发-ETₐ"><a href="#Step-1-计算每日实际蒸散发-ETₐ" class="headerlink" title="Step 1: 计算每日实际蒸散发 (ETₐ)"></a>Step 1: 计算每日实际蒸散发 (ETₐ)</h4><p>WaterCROP模型 (改良自 Tuninetti et al., 2015) 在每个 5 arcminute 网格单元内运行日尺度土壤水平衡模型：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">ETa,<span class="hljs-keyword">j </span>= ks,<span class="hljs-keyword">j </span>× kc,<span class="hljs-keyword">j </span>× ET0,<span class="hljs-keyword">j</span><br></code></pre></td></tr></table></figure>
+
+<p>其中：</p>
+<ul>
+<li><code>ET₀,j</code> = 日参考蒸散发 (由月值线性插值获取)</li>
+<li><code>k_c,j</code> = 日作物系数 (随生长阶段变化)</li>
+<li><code>k_s,j</code> = 日水分胁迫系数 (雨养: 日土壤水平衡 → 胁迫时 &lt;1; 灌溉: 始终 = 1)</li>
+</ul>
+<p>→ 每年 (1961–2018) 生长季内逐日循环计算，得到年际 ETₐ 序列 (58年 × 每作物 × 每网格)</p>
+<h4 id="Step-2-计算干旱敏感性-DS"><a href="#Step-2-计算干旱敏感性-DS" class="headerlink" title="Step 2: 计算干旱敏感性 (DS)"></a>Step 2: 计算干旱敏感性 (DS)</h4><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">DS</span> <span class="hljs-operator">=</span> (Y_median − Y_10th) / Y_median × <span class="hljs-number">100</span>%<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>通过 ET–Y 水分生产函数 (Doorenbos &amp; Kassam, 1979) 将 ETₐ 的变化转换为产量变化：<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nix">(<span class="hljs-number">1</span> − Y_median <span class="hljs-symbol">/</span> Y_2010) <span class="hljs-operator">=</span> k_y × (<span class="hljs-number">1</span> − ETa,median <span class="hljs-symbol">/</span> ETa,<span class="hljs-number">2010</span>)<br></code></pre></td></tr></table></figure></li>
+<li>再对 ETₐ,10th 重复此计算以获得极端条件下的产量</li>
+<li>DS 度量<strong>中位产量</strong> (正常气候) 与<strong>第10百分位 ETₐ 条件下的产量</strong> (极端不利气候) 之间的百分比差距</li>
+</ul>
+<h4 id="Step-3-可持续灌溉扩展评估"><a href="#Step-3-可持续灌溉扩展评估" class="headerlink" title="Step 3: 可持续灌溉扩展评估"></a>Step 3: 可持续灌溉扩展评估</h4><ul>
+<li>利用水资源短缺图识别可安全灌溉扩展的雨养区域 (无物理水资源短缺处)</li>
+<li>将雨养产量替换为对应灌溉产量和 DS 值 → 估算产量损失减少和生产增长</li>
+</ul>
+<h4 id="Step-4-作物转换评估"><a href="#Step-4-作物转换评估" class="headerlink" title="Step 4: 作物转换评估"></a>Step 4: 作物转换评估</h4><ul>
+<li><strong>配对比较</strong>：在两种作物共现的像素中，比较产量加权的 DS 累积分布函数 (CDF)</li>
+<li><strong>像素级转换</strong>：若替代作物产量 ≥ 当前作物产量且 DS 更低，则进行比例性面积替换 (仅限季风谷物)</li>
+</ul>
+<h4 id="Step-5-模型验证"><a href="#Step-5-模型验证" class="headerlink" title="Step 5: 模型验证"></a>Step 5: 模型验证</h4><ul>
+<li>本文 ET–Y 产量估计与 FAOSTAT 国家去趋势产量序列 (去趋势后异常) 的比较 (两样本 KS 检验)</li>
+<li>与 LPJmL 过程模型 (固定技术和管理) 的异常一致性验证</li>
+<li><strong>17种作物中12种</strong>与 FAOSTAT 异常在统计上无法区分 (H=0)；与 LPJmL 的一致性同样较高</li>
+</ul>
+<h3 id="3-3-方法学核心图示"><a href="#3-3-方法学核心图示" class="headerlink" title="3.3 方法学核心图示"></a>3.3 方法学核心图示</h3><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs dns">气候数据 (P, ET₀, <span class="hljs-number">1961-2018</span>)<br>        ↓<br>土壤数据 (TAWC) + 种植日期 + 作物参数 (k_c, k_y, 根深)<br>        ↓<br>   WaterCROP 日土壤水平衡模型<br>        ↓<br> <span class="hljs-number">58</span>个年际 ETₐ 序列 (每作物×每网格)<br>        ↓<br>   ET–Y 水分生产函数 (k_y)<br>        ↓<br> <span class="hljs-keyword">DS</span> = (Y_median − Y_10th) / Y_median × <span class="hljs-number">100</span>%<br>        ↓<br>   ┌─ 干旱敏感性全球图 (Fig.<span class="hljs-number">1</span>)<br>   ├─ 生产损失估计 (Table <span class="hljs-number">1</span>)<br>   ├─ 可持续灌溉扩展 (Fig.<span class="hljs-number">2</span>)<br>   ├─ 作物转换 CDF (Fig.<span class="hljs-number">3</span>)<br>   └─ 整合方案 (Fig.<span class="hljs-number">4</span>)<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、新发现与新认识"><a href="#四、新发现与新认识" class="headerlink" title="四、新发现与新认识"></a>四、新发现与新认识</h2><h3 id="4-1-全球干旱敏感性空间格局-Q1"><a href="#4-1-全球干旱敏感性空间格局-Q1" class="headerlink" title="4.1 全球干旱敏感性空间格局 (Q1)"></a>4.1 全球干旱敏感性空间格局 (Q1)</h3><p><strong>关键发现 1：全球雨养生产干旱敏感性热点分布极不均匀，且与主要粮食产区的空间重合度高</strong><br><img src="drought-sensitivity-hotspots.png" srcset="/images/custom-logo.png" lazyload alt="全球雨养作物生产干旱敏感热点"><br>全球雨养作物生产干旱敏感热点 干旱敏感热点 图1：全球雨养作物生产的干旱敏感热点。1961年至2018年期间总作物产量的像素级干旱敏感性（DS）（a）。巴西（b）和中国（c）的国家平均干旱敏感性作为示例，因为这些国家作物多样性较高且地理多样。</p>
+<ul>
+<li>全球雨养生产平均 DS = **10.1%**（中位雨养产量在极端水分条件下损失约十分之一）</li>
+<li>灌溉生产平均 DS = **6.8%**（灌溉有效缓冲了部分气候冲击）</li>
+<li><strong>主要热点区域</strong>：<ul>
+<li>🌽 美国中西部：大豆 (15.2%)、大麦、高粱 — 与已过度开发的水资源区高度重合</li>
+<li>🇧🇷 巴西东部 (Caatinga / Mata Atlântica)：马铃薯、甘蔗、木薯</li>
+<li>🌊 地中海盆地：西班牙 (油菜籽、甘薯)、摩洛哥 (马铃薯、大麦)、阿尔及利亚 (小麦)</li>
+<li>🌾 南亚 (印度/孟加拉)：小麦、大豆、木薯、水稻</li>
+<li>🇨🇳 中国：大麦、棕榈油、马铃薯 — 中国水稻 DS 为研究作物中最低</li>
+</ul>
+</li>
+</ul>
+<p><strong>关键发现 2：干旱敏感性最高和最低的作物群体分化明显</strong></p>
+<table>
+<thead>
+<tr>
+<th>敏感性等级</th>
+<th>作物</th>
+<th>DS (%)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🔴 最高</td>
+<td>雨养大豆 (soybean)</td>
+<td>15.2</td>
+</tr>
+<tr>
+<td></td>
+<td>雨养马铃薯 (potatoes)</td>
+<td>13.5</td>
+</tr>
+<tr>
+<td></td>
+<td>雨养油菜籽 (rapeseed)</td>
+<td>12.6</td>
+</tr>
+<tr>
+<td>🟢 最低</td>
+<td>雨养山药 (yams)</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td></td>
+<td>雨养花生 (groundnuts)</td>
+<td>6.2</td>
+</tr>
+<tr>
+<td></td>
+<td>雨养小米 (millet)</td>
+<td>6.8</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>上述相对敏感性与这些作物的农学耐旱特性一致 (Daryanto et al., 2017)。</p>
+</blockquote>
+<p><strong>关键发现 3：DS 指标揭示水分限制机制的差异</strong></p>
+<ul>
+<li><strong>大多数作物</strong> (&gt;90% 的种植像素中降水低于第20百分位)：属于”<strong>水分限制型</strong>“ (water-limited) — 降雨不足是导致 ETₐ 降低和产量损失的主因</li>
+<li><strong>高粱、小米、油菜籽、山药</strong> 表现不同：属于”<strong>能量限制型</strong>“ (energy-limited) — 其 ETₐ 最低年份通常伴随较低的大气蒸发需求 (更凉爽、多云、低风速条件)，此时<strong>水分供给并非瓶颈</strong>，而是降低的蒸发/蒸腾驱动力限制了作物水分利用和生产力</li>
+</ul>
+<h3 id="4-2-全球损失规模估计-Q2"><a href="#4-2-全球损失规模估计-Q2" class="headerlink" title="4.2 全球损失规模估计 (Q2)"></a>4.2 全球损失规模估计 (Q2)</h3><p><strong>关键发现 4：干旱相关生产损失相当于 21 亿人的热量供给</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>雨养</th>
+<th>灌溉</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>生产损失 (百万吨)</td>
+<td>406</td>
+<td>135</td>
+</tr>
+<tr>
+<td>生产损失 (%)</td>
+<td>10.1%</td>
+<td>6.8%</td>
+</tr>
+<tr>
+<td>热量损失 (10¹⁵ kcal)</td>
+<td>1.5</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>相当于养活人数 (2500 kcal/day)</td>
+<td>16 亿</td>
+<td>5 亿</td>
+</tr>
+</tbody></table>
+<p><strong>关键发现 5：主要生产国也是高敏感国</strong></p>
+<p>10/17 种作物的<strong>国家平均 DS 与国家总产量呈显著正相关</strong> — 意味着产量越大的地区也往往面临更大的气候变率敏感性。这一发现强化了适应行动的紧迫性。</p>
+<h3 id="4-3-可持续灌溉扩展的潜力-Q3"><a href="#4-3-可持续灌溉扩展的潜力-Q3" class="headerlink" title="4.3 可持续灌溉扩展的潜力 (Q3)"></a>4.3 可持续灌溉扩展的潜力 (Q3)</h3><p><strong>关键发现 6：可持续灌溉扩展可避免 60% 的雨养损失，同时增产 12%</strong></p>
+<ul>
+<li>以季风谷物 (水稻、玉米、小米、高粱) 为例：<ul>
+<li>可持续灌溉扩展 → 雨养损失减少 **60%**，全球中位产量增加 <strong>12%</strong></li>
+<li>最大收益地区与长期食品不安全区域高度重合：<strong>尼日利亚、南苏丹、委内瑞拉</strong></li>
+</ul>
+</li>
+<li>但存在大量”<strong>不可持续扩展的热点</strong>“：如印度、孟加拉的许多水稻种植区 — 水资源短缺限制了灌溉扩展空间 (Fig.2c)<br><img src="sustainable-irrigation-potential.png" srcset="/images/custom-logo.png" lazyload alt="可持续灌溉扩展潜力"></li>
+</ul>
+<h3 id="4-4-作物转换的机会-Q4–Q5"><a href="#4-4-作物转换的机会-Q4–Q5" class="headerlink" title="4.4 作物转换的机会 (Q4–Q5)"></a>4.4 作物转换的机会 (Q4–Q5)</h3><p><strong>关键发现 7：玉米、小米、高粱的干旱敏感性系统性地优于水稻</strong></p>
+<p>通过产量加权 CDF 比较，在<strong>所有共现种植像素中</strong>：</p>
+<ul>
+<li>雨养和灌溉水稻的 DS CDF 曲线始终低于玉米、小米和高粱</li>
+<li>但玉米-小米、玉米-高粱、小米-高粱之间的相对优劣<strong>依赖于具体地点</strong>，需要进行像素级评估</li>
+</ul>
+<p><strong>关键发现 8：整合方案在不同国家产生异质性效益</strong></p>
+<table>
+<thead>
+<tr>
+<th>国家</th>
+<th>灌溉减少损失</th>
+<th>转换额外减少</th>
+<th>灌溉增产</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🇳🇬 尼日利亚</td>
+<td>−98%</td>
+<td>有限</td>
+<td>显著</td>
+</tr>
+<tr>
+<td>🇦🇷 阿根廷</td>
+<td>−92%</td>
+<td>有限</td>
+<td>显著</td>
+</tr>
+<tr>
+<td>🇧🇷 巴西</td>
+<td>−86%</td>
+<td>有限</td>
+<td>+57%</td>
+</tr>
+<tr>
+<td>🇲🇲 缅甸</td>
+<td>主要</td>
+<td>+21%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>🇧🇩 孟加拉</td>
+<td>主要</td>
+<td>+11%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>🇮🇩 印度尼西亚</td>
+<td>主要</td>
+<td>+10%</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>整合方案在<strong>水稻是主要季风作物的南亚/东南亚</strong>效益最显著 — 因为水稻 DS 高于替代作物。</p>
+</blockquote>
+<hr>
+<h2 id="五、结论"><a href="#五、结论" class="headerlink" title="五、结论"></a>五、结论</h2><h3 id="5-1-核心结论"><a href="#5-1-核心结论" class="headerlink" title="5.1 核心结论"></a>5.1 核心结论</h3><ol>
+<li><strong>构建了一个可规模化、可迁移的干旱敏感性 (DS) 评估框架</strong> — 能够量化17种主要作物的 DS 全球空间格局，识别精确的热点区域。</li>
+<li>**全球雨养生产在历史极端气候下损失 10.1%**，相当于 21 亿人的年热量需求 — 说明气候变率对全球粮食安全的威胁是实质性且大规模的。</li>
+<li><strong>可持续灌溉扩展和作物转换是两种有效且互补的适应策略</strong>：<ul>
+<li>灌溉扩展可避免约 60% 的雨养损失并增产 12% (季风谷物)</li>
+<li>在灌溉不可行地区，作物转换可提供额外 2%–21% 的损失减少</li>
+</ul>
+</li>
+<li><strong>解决方案具有空间异质性，需要因地制宜</strong> — 但 DS 热点与潜在收益区的空间重合度很高，说明针对热点进行精准干预是可行的。</li>
+</ol>
+<h3 id="5-2-方法论贡献"><a href="#5-2-方法论贡献" class="headerlink" title="5.2 方法论贡献"></a>5.2 方法论贡献</h3><ul>
+<li>首次提供 17 种作物 (远超传统的”四大作物”) 的 <strong>全球 5 arcminute 分辨率干旱敏感性估计</strong>；</li>
+<li>DS 指标实现不同作物和区域之间的<strong>客观横向比较</strong>；</li>
+<li>方法论可应用于<strong>历史追踪</strong> (如评估已发生的作物分布变化是否降低了整体 DS)、<strong>未来情景评估</strong> (如检验计划中的作物选择是否会损害气候韧性) 以及<strong>多尺度决策</strong> (从全球到国家到子区域)。</li>
+</ul>
+<hr>
+<h2 id="六、研究亮点"><a href="#六、研究亮点" class="headerlink" title="六、研究亮点"></a>六、研究亮点</h2><table>
+<thead>
+<tr>
+<th>#</th>
+<th>亮点</th>
+<th>详细说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🌟 1</td>
+<td><strong>从”单一作物”到”全生产篮子”</strong></td>
+<td>超越现有研究仅关注玉米、水稻、小麦、大豆的局限，首次覆盖 17 种作物 (占全球产量 75%)，特别是提供了棕榈油、甘薯、木薯、小米等”研究不足”作物的全球 DS 估计</td>
+</tr>
+<tr>
+<td>🌟 2</td>
+<td><strong>水分限制 vs. 能量限制的机制区分</strong></td>
+<td>发现并非所有”ETₐ 降低”都源自缺水 — 高粱、小米等作物的低 ETₐ 年来自大气蒸发需求降低而非土壤干旱。这一区分对正确解读 DS 指标和设计干预策略至关重要</td>
+</tr>
+<tr>
+<td>🌟 3</td>
+<td><strong>水资源可持续性作为硬约束</strong></td>
+<td>灌溉扩展评估中明确纳入物理和经济水资源短缺约束 (Rosa et al., 2020)，避免推荐不可持续的灌溉扩张方案 — 这是许多全球尺度假定”灌溉可消除气候风险”的研究所忽略的</td>
+</tr>
+<tr>
+<td>🌟 4</td>
+<td><strong>方法论的尺度中立性与可迁移性</strong></td>
+<td>DS 框架不依赖复杂的作物过程模型参数，可在不同空间尺度 (全球/国家/子国家) 和不同作物组合上复现，并兼容更先进模型的嵌入 (如 APSIM、DNDC)</td>
+</tr>
+<tr>
+<td>🌟 5</td>
+<td><strong>配对 CDF 比较的精巧设计</strong></td>
+<td>仅在两作物<strong>共现像素</strong>中比较 DS 分布 — 控制了农业气候因素的混杂效应，确保比较的是”在同一地点实际可行的选择”而非简单的全局均值对比</td>
+</tr>
+<tr>
+<td>🌟 6</td>
+<td><strong>三重模型交叉验证</strong></td>
+<td>同时与 FAOSTAT 去趋势官方统计和 LPJmL 过程模型 (固定技术/管理) 进行 KS 检验验证，17 种作物中 12 种异常分布统计无差异 — 验证强度高于大多数同类研究</td>
+</tr>
+<tr>
+<td>🌟 7</td>
+<td><strong>可操作性强</strong></td>
+<td>DS 热点图 + 灌溉可行性图 + 作物转换潜力图构成了一个<strong>决策支持工具箱</strong>，可指导不同空间尺度上的适应政策设计和投资优先级排序</td>
+</tr>
+<tr>
+<td>🌟 8</td>
+<td><strong>坦率的局限讨论</strong></td>
+<td>作者系统讨论了固定种植范围假设、农业统计的空间精度限制、模型简化与过程模型之间的权衡、以及实施干预的复杂社会经济约束 — 这种透明性和自省性增强了结论的可信度</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="七、批判性阅读笔记-Critical-Reading-Notes"><a href="#七、批判性阅读笔记-Critical-Reading-Notes" class="headerlink" title="七、批判性阅读笔记 / Critical Reading Notes"></a>七、批判性阅读笔记 / Critical Reading Notes</h2><ol>
+<li><strong>DS 指标不直接捕捉温度极端值的影响</strong>：DS 仅通过水分平衡 (ETₐ) 间接反映温度和辐射的作用。高温热害 (如开花期热胁迫) 的直接生理效应未被纳入——这限制了该指标对”复合型干热事件”影响的完全表征。</li>
+<li><strong>固定 2010 年作物分布假设</strong>：分析基于 2010 年收获面积的静态快照，无法捕捉过去几十年的种植模式变化 (如 Sloat et al., 2020 记录的作物迁移)，也无法反映未来可能的适应。</li>
+<li><strong>灌溉扩展的用水竞争未充分量化</strong>：虽然在”物理缺水”区域排除了灌溉扩展，但灌溉消费性用水的增加可能通过流域水平的水量平衡影响下游用户的可用水量——这是一个需要更细粒度水文模拟的维度。</li>
+<li><strong>作物转换的社会经济可行性</strong>：像素内两种作物共存不等于农户可以无摩擦地转换——市场准入、价值链、传统偏好、政策激励等均在分析范围之外。</li>
+<li><strong>文章的 In Press 状态</strong>：本文为 Nature Communications “Article in Press” (未编辑版本)，最终发表的编辑版本可能在文字和数据呈现上有细微调整。</li>
+</ol>
+<hr>
+<p><em>本文生成于 2026-06-04，基于 Nature Communications Article in Press 版本全文。</em></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A7%91%E7%A0%94%E6%97%A5%E5%B8%B8/" class="category-chain-item">科研日常</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/" class="print-no-link">#论文精读</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>全球干旱对作物影响的热点以及该如何解决？</div>
+      <div>https://jingyizi.github.io/2026/06/04/article-reading/index/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>靖翼子</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/06/04/article-reading-2/index/" title="土壤湿度主导了全球的干旱胁迫">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">土壤湿度主导了全球的干旱胁迫</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/02/hello-world/index/" title="从今天开始记录科研日常">
+                        <span class="hidden-mobile">从今天开始记录科研日常</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+    expandAllToc();
+    bindTocToggle();
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+        expandAllToc();
+        bindTocToggle();
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/intro-card.js"></script>
+<script src="/js/banner-contrast.js"></script>
+<script src="/js/toc-enhance.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

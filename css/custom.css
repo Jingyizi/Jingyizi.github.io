@@ -1,0 +1,661 @@
+/* ============================================
+   靖翼之憩 — 自定义样式 v3
+   全部基于 Fluid 真实 DOM 结构重写
+   ============================================ */
+
+/* ------------------------------------------
+   1. 全站背景
+   ------------------------------------------ */
+body {
+  background: url("/images/background.jpg") center/cover fixed;
+}
+
+/* ------------------------------------------
+   2. 导航栏 — 顶部透明 → 滚动后显色
+   Fluid 渲染: nav#navbar.navbar.fixed-top.navbar-dark
+   ------------------------------------------ */
+#navbar {
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: background 0.4s ease, box-shadow 0.4s ease !important;
+}
+/* JS 滚动时附加此 class */
+#navbar.navbar-colored {
+  background: #2f4154 !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;
+}
+#navbar .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+#navbar .nav-link:hover,
+#navbar .nav-link.active {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 6px;
+}
+/* 导航栏图标 — 确保所有图标可见（含细线非fill图标） */
+#navbar .nav-link .iconfont {
+  font-size: 1.15rem;
+  margin-right: 4px;
+  opacity: 1 !important;
+  display: inline-block !important;
+}
+/* 非fill图标用 text-shadow 加粗可见度 */
+#navbar .nav-link .iconfont.icon-category {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* ------------------------------------------
+   3. Banner — Fluid 自带 fade-in-up + scroll-down-bar
+   我们只微调样式，不重造轮子
+   ------------------------------------------ */
+
+/* 标题入场 — 用 Fluid 自带的 fade-in-up，稍微增强 */
+.banner-text.fade-in-up {
+  animation-duration: 0.8s;
+}
+
+/* 副标题（打字机目标 #subtitle）*/
+/* Fluid typing.js 自动选中 #subtitle，不做任何 CSS 动画阻挡 */
+.banner-text .h2 {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* ----- Banner 文字对比度增强 ----- */
+/* 为所有 banner 文字添加智能 text-shadow，确保在各种背景图上清晰可读 */
+.banner-text,
+.banner-text h1,
+.banner-text .h2,
+.banner-text #subtitle,
+.banner-text .fade-in-up {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6),
+               0 0 24px rgba(0, 0, 0, 0.3),
+               0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 浅色背景时 JS 动态切换为深色投影 */
+.banner-light-text .banner-text,
+.banner-light-text .banner-text h1,
+.banner-light-text .banner-text .h2,
+.banner-light-text .banner-text #subtitle {
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.6),
+               0 0 24px rgba(255, 255, 255, 0.3),
+               0 2px 4px rgba(255, 255, 255, 0.5) !important;
+  color: #1a1a2e !important;
+}
+
+/* 深色背景时文字纯白 + 深色投影（默认）*/
+.banner-dark-text .banner-text,
+.banner-dark-text .banner-text h1,
+.banner-dark-text .banner-text .h2,
+.banner-dark-text .banner-text #subtitle {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7),
+               0 0 24px rgba(0, 0, 0, 0.4),
+               0 2px 4px rgba(0, 0, 0, 0.6) !important;
+  color: #fff !important;
+}
+
+/* Fluid 自带下翻箭头 — 增强弹跳效果 */
+.scroll-down-bar {
+  animation: arrow-bounce 2s ease-in-out infinite;
+}
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%      { transform: translateY(10px); opacity: 1; }
+}
+
+/* ----- 文章页 banner 标题灵动化 ----- */
+/* post 页的 banner #subtitle 就是文章标题 */
+.post #subtitle {
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px;
+  display: inline-block;
+}
+/* 文章页 banner 元信息 */
+.post .banner-text .mt-3 {
+  animation: fade-in-delay 0.7s ease-out 0.4s both;
+}
+@keyframes fade-in-delay {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------------
+   4. 内容区 — Fluid 用 #board 不是 #content-outer
+   ------------------------------------------ */
+#board {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ------------------------------------------
+   5. 文章卡片 — .index-card 是 Fluid 真实 class
+   ------------------------------------------ */
+.index-card {
+  background: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  margin-bottom: 1.5rem !important;
+  padding: 1.8rem 2rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.index-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 卡片内标题 — Fluid 用 .index-header h2 > a */
+.index-header a {
+  color: #2c3e50 !important;
+  font-weight: 600 !important;
+  font-size: 1.3rem !important;
+  text-decoration: none !important;
+}
+.index-header a:hover {
+  color: #4c6cb3 !important;
+}
+
+/* 卡片内摘要 */
+.index-excerpt {
+  color: #555 !important;
+  line-height: 1.8 !important;
+}
+
+/* 卡片内元信息 */
+.post-metas,
+.post-meta {
+  color: #999 !important;
+  font-size: 0.9rem !important;
+}
+
+/* 标签/分类药丸 */
+.category-chains a,
+.post-meta a[href*="tags"] {
+  display: inline-block !important;
+  background: #eef1f6 !important;
+  color: #5a6d80 !important;
+  padding: 2px 10px !important;
+  border-radius: 12px !important;
+  font-size: 0.82rem !important;
+  text-decoration: none !important;
+  margin-right: 4px !important;
+  transition: background 0.2s !important;
+}
+.category-chains a:hover,
+.post-meta a[href*="tags"]:hover {
+  background: #4c6cb3 !important;
+  color: #fff !important;
+}
+
+/* ------------------------------------------
+   6. 首页个人介绍卡片（JS 动态插入）
+   ------------------------------------------ */
+.intro-card-wrapper {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.07);
+  padding: 2.2rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: card-rise 0.6s ease-out 0.3s forwards;
+}
+@keyframes card-rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+.intro-card-wrapper .intro-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid #e0e3e8;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+.intro-card-wrapper .intro-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+}
+.intro-card-wrapper .intro-affiliation {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 0.8rem;
+}
+.intro-card-wrapper .intro-subtitle {
+  font-size: 0.95rem;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.intro-card-wrapper .intro-tags {
+  margin-bottom: 1rem;
+}
+.intro-card-wrapper .intro-tags span {
+  display: inline-block;
+  background: #f0f2f5;
+  color: #4c6cb3;
+  padding: 5px 16px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  margin: 4px 6px;
+  font-weight: 500;
+}
+.intro-card-wrapper .intro-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+.intro-card-wrapper .intro-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 20px;
+  background: #f5f6f8;
+  color: #555;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.intro-card-wrapper .intro-links a:hover {
+  background: #4c6cb3;
+  color: #fff;
+}
+
+/* ------------------------------------------
+   7. 文章详情页 .post-content（真实 class）
+   ------------------------------------------ */
+.post-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  line-height: 1.9;
+  color: #3c4858;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  color: #2c3e50;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.markdown-body h2 {
+  border-bottom: 2px solid #eef1f6;
+  padding-bottom: 0.4rem;
+}
+.markdown-body a { color: #4c6cb3; }
+.markdown-body a:hover { color: #2f4154; }
+.markdown-body blockquote {
+  border-left: 4px solid #4c6cb3;
+  background: #f8f9fb;
+  padding: 1rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  color: #666;
+  font-style: italic;
+}
+.markdown-body img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.markdown-body pre, .markdown-body code {
+  border-radius: 8px;
+}
+
+/* 隐藏 SEO header（内容区 h1 在 banner 已显示标题） */
+#seo-header {
+  display: none;
+}
+
+/* ------------------------------------------
+   8. 页脚
+   ------------------------------------------ */
+footer {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(8px);
+  color: #999 !important;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+footer a { color: #4c6cb3 !important; }
+
+/* ------------------------------------------
+   9. 侧边 TOC — 完整修复
+   Fluid 默认将 TOC 包在 d-none d-xl-block 列中（仅 ≥1200px 可见），
+   且 sticky 定位容易被 #board 的 z-index 覆盖。以下彻底修复。
+   ------------------------------------------ */
+
+/* 9.1 强制 TOC 父容器在 lg+ (≥992px) 屏幕可见 */
+/* 使用 :has() 选择器精准定位包含 #toc 的隐藏列 */
+@media (min-width: 992px) {
+  .d-none:has(#toc),
+  .d-xl-block.d-none:has(#toc) {
+    display: block !important;
+  }
+}
+/* 兼容不支持 :has() 的旧浏览器：直接让 toc-widget 显形 */
+@supports not (selector(:has(*))) {
+  @media (min-width: 992px) {
+    .toc-widget {
+      display: block !important;
+      position: fixed !important;
+      right: max(16px, calc((100vw - 1100px) / 2 - 200px));
+      top: 80px;
+      width: 200px;
+      z-index: 100 !important;
+    }
+  }
+}
+
+/* 9.2 侧边栏 sticky 定位 + 尺寸控制 */
+@media (min-width: 992px) {
+  .toc-widget,
+  #toc {
+    position: sticky;
+    top: 80px;
+    align-self: flex-start;
+  }
+  .toc-widget {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+/* 9.3 TOC 容器 — Fluid 使用 #toc 作为 tocbot 挂载点 */
+#toc {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-radius: 10px;
+  padding: 1rem 0.8rem !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  font-size: 0.88rem;
+  z-index: 10 !important;
+  position: relative;
+}
+/* 移动端 TOC 不作为侧边栏，改为隐藏在文章内 */
+@media (max-width: 991px) {
+  #toc {
+    position: relative !important;
+    top: auto !important;
+    max-height: 50vh;
+    margin: 1rem 0;
+  }
+}
+
+/* 9.4 TOC 列表项 */
+#toc .toc {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+#toc .toc-item {
+  margin: 2px 0;
+}
+#toc .toc-link {
+  display: block;
+  color: #5a6d80 !important;
+  text-decoration: none !important;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#toc .toc-link:hover {
+  color: #4c6cb3 !important;
+  background: rgba(76, 108, 179, 0.06);
+  border-left-color: #4c6cb3;
+}
+
+/* 9.5 TOC 当前激活项 — 跟随滚动高亮 */
+#toc .toc-link.is-active-link,
+#toc .toc-link.active {
+  color: #4c6cb3 !important;
+  background: rgba(76, 108, 179, 0.1) !important;
+  border-left-color: #4c6cb3 !important;
+  font-weight: 600 !important;
+}
+
+/* 9.6 TOC 子级缩进 */
+#toc .toc-child {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+/* 9.7 移动端 TOC 浮动按钮 */
+.toc-toggle-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 80px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #4c6cb3;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 12px rgba(76, 108, 179, 0.3);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.toc-toggle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(76, 108, 179, 0.4);
+}
+@media (max-width: 991px) {
+  .toc-toggle-btn {
+    display: flex;
+  }
+}
+
+/* 9.8 移动端 TOC 弹出面板 */
+.toc-mobile-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.toc-mobile-panel.open {
+  transform: translateX(0);
+}
+.toc-mobile-panel .toc-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eef1f6;
+}
+.toc-mobile-panel .toc-panel-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+.toc-mobile-panel .toc-panel-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.toc-mobile-panel .toc-panel-close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+.toc-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.toc-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ------------------------------------------
+   10. 出版物/成果页 — 学术列表样式
+   ------------------------------------------ */
+.pub-list {
+  margin-bottom: 2rem;
+}
+.pub-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #4c6cb3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pub-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border-left-color: #2f4154;
+}
+.pub-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.4rem;
+}
+.pub-authors {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+.pub-venue {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+.pub-meta {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.2rem;
+}
+.pub-links {
+  margin-top: 0.4rem;
+}
+.pub-links a {
+  display: inline-block;
+  font-size: 0.88rem;
+  color: #4c6cb3;
+  text-decoration: none;
+  margin-right: 1rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #eef1f6;
+  transition: all 0.2s;
+}
+.pub-links a:hover {
+  background: #4c6cb3;
+  color: #fff;
+}
+
+/* ------------------------------------------
+   11. 非首页 — 不显示下翻箭头
+   ------------------------------------------ */
+.page:not(.index) .scroll-down-bar {
+  display: none !important;
+}
+
+/* ------------------------------------------
+   12. 标签页 — 标签云/列表增强可读性
+   ------------------------------------------ */
+/* 标签页容器 */
+.tagcloud,
+.tag-list {
+  padding: 0;
+  margin: 1rem 0;
+}
+/* 标签页单个标签链接 */
+.tagcloud a,
+.tag-list .tag-list-item a,
+.tag-list-item a {
+  display: inline-block !important;
+  background: #e8ecf4 !important;
+  color: #3c4d6b !important;
+  padding: 6px 16px !important;
+  border-radius: 18px !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  margin: 5px 6px !important;
+  transition: all 0.25s ease !important;
+  border: 1px solid rgba(76, 108, 179, 0.15) !important;
+}
+.tagcloud a:hover,
+.tag-list .tag-list-item a:hover,
+.tag-list-item a:hover {
+  background: #4c6cb3 !important;
+  color: #fff !important;
+  border-color: #4c6cb3 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 108, 179, 0.25);
+}
+
+/* 标签页标题/页头 */
+.tag-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+/* 标签计数徽标 */
+.tagcloud a .tag-count,
+.tag-list-item .tag-count {
+  color: #8898b0;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+/* ------------------------------------------
+   13. 响应式
+   ------------------------------------------ */
+@media (max-width: 768px) {
+  .banner-text .h2 { font-size: 1.3rem; }
+  .post-content { padding: 1.2rem; }
+  .index-card { padding: 1.2rem !important; }
+  #board {
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: -24px;
+  }
+}
